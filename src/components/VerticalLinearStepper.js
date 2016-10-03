@@ -7,9 +7,8 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import Hospital from './Hospital'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -41,7 +40,7 @@ class VerticalLinearStepper extends React.Component {
             return (
                 <div style={{ margin: '12px 0' }}>
                     <RaisedButton
-                        label={stepIndex === 2 ? 'Finish' : '下一步'}
+                        label={stepIndex === 2 ? '完 成' : '下一步'}
                         disableTouchRipple={true}
                         disableFocusRipple={true}
                         primary={true}
@@ -79,16 +78,9 @@ class VerticalLinearStepper extends React.Component {
             <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
                 <Stepper activeStep={stepIndex} orientation="vertical">
                     <Step>
-                        <StepLabel>请选择先城市</StepLabel>
+                        <StepLabel>请选择医院与生产方式</StepLabel>
                         <StepContent>
-                            <DropDownMenu value={1}>
-                                <MenuItem value={1} primaryText="洛杉矶" />
-                                <MenuItem value={2} primaryText="Pasadena" />
-                                <MenuItem value={3} primaryText="Arcadia" />
-                                <MenuItem value={4} primaryText="罗兰岗" />
-                                <MenuItem value={5} primaryText="Invine" />
-                            </DropDownMenu>
-                            <p></p>
+                            <Hospital/>
                             {this.renderStepActions(0) }
                         </StepContent>
                     </Step>
