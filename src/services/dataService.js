@@ -95,5 +95,13 @@ const miscData = {
     }
 }
 
-export {mediacalData, miscData}
+function getDoctorByHospital (hospital_name) {
+    for (var index=0; index < mediacalData.length; index++) {
+        if(mediacalData[index].hospital === hospital_name) {
+            return mediacalData[index].doctors
+        }
+    }
+}
+
+export { mediacalData, miscData, getDoctorByHospital }
 

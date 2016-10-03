@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import Subheader from 'material-ui/Subheader';
 import { mediacalData } from '../services/dataService'
 import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
@@ -13,7 +14,6 @@ class Hospital extends Component {
                 return <MenuItem key={item.id} value={item.hospital} primaryText={item.hospital}/>
             }
         )
-        const defaultHospital = mediacalData[0].hospital
 
         const styles = {
             block: {
@@ -26,11 +26,15 @@ class Hospital extends Component {
 
         return (
             <div>
-                <DropDownMenu value={defaultHospital} onChange={this.props.hospitalQ}>
+                <Subheader> 选择医院 </Subheader>
+                <DropDownMenu value={this.props.hospital} onChange={this.props.hospitalQ}>
                     {menuItem}
                 </DropDownMenu>
-                <p></p>
-                <RadioButtonGroup name="productionType" defaultSelected="nature" onChange={this.props.productionQ}>
+                <br/><br/>
+                <Subheader> 选择生产方式 </Subheader>
+                <RadioButtonGroup name="productionType"
+                    defaultSelected={this.props.production_type}
+                    onChange={this.props.productionQ}>
                     <RadioButton
                         value="nature"
                         label="顺产"
@@ -44,6 +48,13 @@ class Hospital extends Component {
                 </RadioButtonGroup>
             </div>
         );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        hospital: state.calcReducer.hospital_name,
+        production_type: state.calcReducer.production_type,
     }
 }
 
@@ -64,4 +75,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Hospital)
+export default connect(mapStateToProps, mapDispatchToProps)(Hospital)

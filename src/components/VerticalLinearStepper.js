@@ -7,13 +7,17 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import Hospital from './Hospital'
+import Doctor from './Doctor'
+import StayDays from './StayDays'
+import House from './House'
+import Car from './Car'
 
 class VerticalLinearStepper extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             finished: false,
             stepIndex: 0,
@@ -23,7 +27,7 @@ class VerticalLinearStepper extends React.Component {
             const {stepIndex} = this.state;
             this.setState({
                 stepIndex: stepIndex + 1,
-                finished: stepIndex >= 2,
+                finished: stepIndex >= 4,
             });
         };
 
@@ -40,7 +44,7 @@ class VerticalLinearStepper extends React.Component {
             return (
                 <div style={{ margin: '12px 0' }}>
                     <RaisedButton
-                        label={stepIndex === 2 ? '完 成' : '下一步'}
+                        label={stepIndex === 4 ? '完 成' : '下一步'}
                         disableTouchRipple={true}
                         disableFocusRipple={true}
                         primary={true}
@@ -65,20 +69,11 @@ class VerticalLinearStepper extends React.Component {
     render() {
         const {finished, stepIndex} = this.state;
 
-        const styles = {
-                block: {
-                maxWidth: 250,
-            },
-            radioButton: {
-                marginBottom: 16,
-            },
-        };
-
         return (
             <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
                 <Stepper activeStep={stepIndex} orientation="vertical">
                     <Step>
-                        <StepLabel>请选择医院与生产方式</StepLabel>
+                        <StepLabel>选择医院与生产方式</StepLabel>
                         <StepContent>
                             <Hospital/>
                             {this.renderStepActions(0) }
@@ -86,49 +81,41 @@ class VerticalLinearStepper extends React.Component {
                     </Step>
                     <Step>
 
-                        <StepLabel>选择医院与医生</StepLabel>
+                        <StepLabel>选择医生</StepLabel>
                         <StepContent>
-                                <RadioButtonGroup name="shipSpeed" defaultSelected="not_light">
-                                    <RadioButton
-                                     value="light"
-                                     label="医院A"
-                                     style={styles.radioButton}
-                                      />
-                                    <RadioButton
-                                    value="not_light"
-                                    label="医院B" 
-                                    style={styles.radioButton}
-                                    />
-
-                                 </RadioButtonGroup>
+                            <Doctor/>
                             {this.renderStepActions(1) }
                         </StepContent>
                     </Step>
                     <Step>
-                        <StepLabel>Create an ad</StepLabel>
+                        <StepLabel>逗留时间</StepLabel>
                         <StepContent>
-                            <p>
-                                Try out different ad text to see what brings in the most customers,
-                                and learn how to enhance your ads using features like ad extensions.
-                                If you run into any problems with your ads, find out how to tell if
-                                they're running and how to resolve approval issues.
-                            </p>
+                            <StayDays/>
                             {this.renderStepActions(2) }
+                        </StepContent>
+                    </Step>
+                    <Step>
+                        <StepLabel>住宿与生活</StepLabel>
+                        <StepContent>
+                            <House/>
+                            {this.renderStepActions(3) }
+                        </StepContent>
+                    </Step>
+                    <Step>
+                        <StepLabel>交通</StepLabel>
+                        <StepContent>
+                            <Car/>
+                            {this.renderStepActions(4) }
                         </StepContent>
                     </Step>
                 </Stepper>
                 {finished && (
-                    <p style={{ margin: '20px 0', textAlign: 'center' }}>
-                        <a
-                            href="#"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                this.setState({ stepIndex: 0, finished: false });
-                            } }
-                            >
-                            Click here
-                        </a> to reset the example.
-                    </p>
+                    <div style={{ margin: '20px 0', textAlign: 'center' }}>
+                        <FlatButton label="重头开始" primary={true} onClick={(event) => {
+                            event.preventDefault();
+                            this.setState({ stepIndex: 0, finished: false });
+                        } }/>
+                    </div>
                 ) }
             </div>
         );
