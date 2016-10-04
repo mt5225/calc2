@@ -1,3 +1,4 @@
+import { calcPrice } from '../services/dataService'
 const initialState = {
     hospital_name: 'Cedars-Sinai Medical Center',
     production_type: 'nature',
@@ -6,7 +7,7 @@ const initialState = {
     house_type: '1b1b',
     need_care: false,
     car_type: 'uber',
-    calc_result: 0,
+    total_price: 0,
 }
 
 
@@ -56,6 +57,13 @@ const calcReducer = (state = initialState, action) => {
             )
         case 'A_RESET':
             return initialState
+        case 'A_FINISH':
+            const total_price = calcPrice(state)
+            return Object.assign(
+                {},
+                state,
+                { total_price: total_price }
+            )
         default:
             return state
     }

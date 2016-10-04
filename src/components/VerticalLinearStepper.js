@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 import { connect } from 'react-redux'
 import {
     Step,
     Stepper,
     StepLabel,
     StepContent,
-} from 'material-ui/Stepper';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+} from 'material-ui/Stepper'
+import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card'
+import {List, ListItem} from 'material-ui/List'
 import Hospital from './Hospital'
 import Doctor from './Doctor'
 import StayDays from './StayDays'
@@ -28,7 +30,7 @@ class VerticalLinearStepper extends React.Component {
                         disableFocusRipple={true}
                         primary={true}
                         disabled={this.props.nextBtnDisable}
-                        onTouchTap={this.props.nextAction}
+                        onTouchTap={this.props.stepIndex === 4 ? this.props.finishAction : this.props.nextAction}
                         style={{ marginRight: 12 }}
                         />
                     {step > 0 && (
@@ -46,6 +48,50 @@ class VerticalLinearStepper extends React.Component {
     }
 
     render() {
+        const title = "估计花销" + this.props.total_price + "人民币"
+        let medical = ""
+        if(this.props.choise.production_type === 'nature')  {medical += "顺产"} else {medical += "剖腹产"}
+        medical += " 医院 " + this.props.choise.hospital_name
+        medical += " 医生" + this.props.choise.doctor_name
+        
+        let living = ""
+        living += " 在美逗留" + this.props.choise.stay_days + "天, 住宿为"
+        if(this.props.choise.house_type === '1b1b') {living += "一房一卫, "} else {living += "两房一卫, "}
+        if(this.props.choise.need_care) {living += "需要月嫂,"} else {living += "不需要月嫂,"}
+        if(this.props.choise.car_type === 'uber'){living += "交通方式为公交+uber"} else {living += "交通方式为自己租车"}
+        
+        const CardExampleExpandable = () => (
+            <Card initiallyExpanded={true}>
+                <CardHeader
+                    title={title}
+                    titleStyle={{fontSize: 'large'}}
+                    subtitle="具体选择如下"
+                    actAsExpander={true}
+                    showExpandableButton={true}
+                    />
+                <CardText expandable={true} >
+                    <List>
+                        <ListItem
+                            primaryText="医院与医生"
+                            secondaryText={medical}
+                            secondaryTextLines={2}
+                            />
+                        <ListItem
+                            primaryText="食宿与交通"
+                            secondaryText={living}
+                            secondaryTextLines={2}
+                            />
+                    </List>
+                </CardText>
+                <CardActions>
+                    <FlatButton label="分享计算结果" />
+                    <FlatButton label="重头开始" primary={true} onClick={(event) => {
+                        event.preventDefault()
+                        this.props.resetAction()
+                    } }/>
+                </CardActions>
+            </Card>
+        )
         return (
             <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
                 <Stepper activeStep={this.props.stepIndex} orientation="vertical">
@@ -87,11 +133,8 @@ class VerticalLinearStepper extends React.Component {
                     </Step>
                 </Stepper>
                 {this.props.finished && (
-                    <div style={{ margin: '20px 0', textAlign: 'center' }}>
-                        <FlatButton label="重头开始" primary={true} onClick={(event) => {
-                            event.preventDefault()
-                            this.props.resetAction()
-                        } }/>
+                    <div style={{ margin: '20px 0' }}>
+                        {CardExampleExpandable() }
                     </div>
                 ) }
             </div>
@@ -101,18 +144,20 @@ class VerticalLinearStepper extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        calc_result: state.calcReducer.calc_result,
         stepIndex: state.stepReducer.stepIndex,
         finished: state.stepReducer.finished,
         stayDays: state.calcReducer.stay_days,
         nextBtnDisable: state.stepReducer.nextBtnDisable,
+        total_price: state.calcReducer.total_price,
+        choise:state.calcReducer
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        calcResult: () => {
+        finishAction: () => {
             dispatch(finishAction())
+            dispatch(nextAction())
         },
         nextAction: () => {
             dispatch(nextAction())

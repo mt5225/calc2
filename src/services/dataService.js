@@ -44,7 +44,7 @@ const mediacalData = [
             }
         ],
     },
-     {
+    {
         id: "fa1c7a56-6e97-48df-8fac-cce0544af7ed",
         hospital: " UCLA Medical Center",
         address: "757 Westwood Plaza, Los Angeles, CA 90095",
@@ -95,13 +95,47 @@ const miscData = {
     }
 }
 
-function getDoctorByHospital (hospital_name) {
-    for (var index=0; index < mediacalData.length; index++) {
-        if(mediacalData[index].hospital === hospital_name) {
+function getDoctorByHospital(hospital_name) {
+    for (var index = 0; index < mediacalData.length; index++) {
+        if (mediacalData[index].hospital === hospital_name) {
             return mediacalData[index].doctors
         }
     }
 }
 
-export { mediacalData, miscData, getDoctorByHospital }
+function calcPrice(state) {
+    let total = 0
+    let hospital = {}
+    const re = /^\d+/
+    //1. find hospital
+    for (var index = 0; index < mediacalData.length; index++) {
+        if (mediacalData[index].hospital === state.hospital_name) {
+            hospital =  mediacalData[index]
+        }
+    }
+    console.log(hospital)
+    //2. find doctors
+    let doctor = {}
+    for (var i = 0; i < hospital['doctors'].length; i++) {
+        if (hospital['doctors'][i].name === state.doctor_name) {
+            doctor = hospital['doctors'][i]
+        }
+    }
+    if (state.production_type === 'nature') {
+        //add hospital cost
+        let tmp = hospital['price']['normal'].match(re)[0]
+        total += parseInt(tmp, 10)
+        // add doctor cost
+        tmp = doctor.price_normal.match(re)[0]
+        total += parseInt(tmp, 10)
+    } else {
+        let tmp = hospital['price']['csection'].match(re)[0]
+        total += parseInt(tmp, 10)
+        tmp = doctor.csection.match(re)[0]
+        total += parseInt(tmp, 10)
+    }
+    return total.toString()
+}
+
+export { mediacalData, miscData, getDoctorByHospital, calcPrice }
 
