@@ -46,7 +46,7 @@ const mapStateToProps = (state) => {
     let doctorlist = getDoctorByHospital(state.calcReducer.hospital_name)
     return {
         doctors: doctorlist,
-        doctorSelected: state.calcReducer.doctor_name === '' ? doctorlist[0] : state.calcReducer.doctor_name,
+        doctorSelected: state.calcReducer.doctor_name,
     }
 }
 

@@ -46,3 +46,11 @@ export const carAction = (payload) => {
         payload
     }
 }
+
+// below is validation for user inputs
+export const vDaysAction = (payload) => {
+    return {
+        type: 'V_DAYS',
+        payload
+    }
+}
