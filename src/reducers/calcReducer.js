@@ -5,7 +5,8 @@ const initialState = {
     stay_days: '',
     house_type: '1b1b',
     need_care: false,
-    car_type: 'uber'
+    car_type: 'uber',
+    calc_result: 0,
 }
 
 
@@ -53,6 +54,8 @@ const calcReducer = (state = initialState, action) => {
                 state,
                 { car_type: action.payload.value }
             )
+        case 'A_RESET':
+            return initialState
         default:
             return state
     }

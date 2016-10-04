@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import { getDoctorByHospital } from '../services/dataService'
-import { doctorAction } from '../actions'
+import { doctorAction,enableNextAction } from '../actions'
 
 class Doctor extends Component {
     render() {
@@ -57,6 +57,7 @@ const mapDispatchToProps = (dispatch) => {
                 value: e.target.value
             }
             dispatch(doctorAction(payload))
+            dispatch(enableNextAction())
         },
     }
 }

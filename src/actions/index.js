@@ -47,6 +47,43 @@ export const carAction = (payload) => {
     }
 }
 
+export const finishAction = () => {
+    return {
+        type: 'A_FINISH',
+    }
+}
+
+export const nextAction = () => {
+    return {
+        type: 'A_NEXT',
+    }
+}
+
+export const prevAction = () => {
+    return {
+        type: 'A_PREV',
+    }
+}
+
+//will rest steps and answers in both reducers
+export const resetAction = () => {
+    return {
+        type: 'A_RESET',
+    }
+}
+
+//enable/disable next button
+export const enableNextAction = () => {
+    return {
+        type: 'A_ENABLE_NEXT',
+    }
+}
+export const disableNextAction = () => {
+    return {
+        type: 'A_DISABLE_NEXT',
+    }
+}
+
 // below is validation for user inputs
 export const vDaysAction = (payload) => {
     return {

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import TextField from 'material-ui/TextField';
-import { daysAction, vDaysAction } from '../actions'
+import { daysAction, vDaysAction, enableNextAction, disableNextAction } from '../actions'
 
 class StayDays extends Component {
     render() {
         return (
             <div>
-             <br/>
+                <br/>
                 <TextField
                     onChange={this.props.daysQ}
                     value={this.props.stay_days}
@@ -34,6 +34,11 @@ const mapDispatchToProps = (dispatch) => {
             }
             dispatch(daysAction(payload))
             dispatch(vDaysAction(payload))
+            if (/^\d+$/.test(e.target.value)) {
+                dispatch(enableNextAction())
+            } else {
+                dispatch(disableNextAction())
+            }
         },
     }
 }
