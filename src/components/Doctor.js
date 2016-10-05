@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import { getDoctorByHospital } from '../services/dataService'
+import { mediacalData } from '../services/dataService'
 import { doctorAction,enableNextAction } from '../actions'
 
 class Doctor extends Component {
@@ -43,7 +43,12 @@ class Doctor extends Component {
 }
 
 const mapStateToProps = (state) => {
-    let doctorlist = getDoctorByHospital(state.calcReducer.hospital_name)
+    let doctorlist = []
+    for (var index = 0; index < mediacalData.length; index++) {
+        if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
+            doctorlist =  mediacalData[index].doctors
+        }
+    }
     return {
         doctors: doctorlist,
         doctorSelected: state.calcReducer.doctor_name,

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import Divider from 'material-ui/Divider';
-import Toggle from 'material-ui/Toggle';
+import Divider from 'material-ui/Divider'
+import Checkbox from 'material-ui/Checkbox'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader';
-import { houseAction, careAction } from '../actions'
+import { mediacalData } from '../services/dataService'
+import { houseAction, careAction, cityAction } from '../actions'
 
 class House extends Component {
 
@@ -20,36 +21,62 @@ class House extends Component {
                 marginBottom: 16,
                 maxWidth: 120,
             },
+            checkbox: {
+                marginBottom: 16,
+                maxWidth: 120,
+            },
         }
+        const radioBtn = this.props.cities.map(
+            (item) => {
+                return (
+                    <RadioButton
+                        value={item.name}
+                        label={item.name}
+                        key={item.name}
+                        style={styles.radioButton}
+                        />
+                )
+            }
+        )
         return (
             <div>
-             <Subheader>选择房型</Subheader>
-                <RadioButtonGroup 
-                name="houseType" 
-                defaultSelected={this.props.house_type} 
-                onChange={this.props.houseQ}
-                >
-                    <RadioButton
-                        value="1b1b"
-                        label="一房一卫"
-                        style={styles.radioButton}
-                        />
-                    <RadioButton
-                        value="2b1b"
-                        label="两房一卫"
-                        style={styles.radioButton}
-                        />
-                </RadioButtonGroup>
                 <div>
-                    <Divider/>
-                    <br/>               
-                     <Toggle
-                        defaultToggled={this.props.need_care}
-                        label="需要月嫂"
-                        style={styles.toggle}
-                        onToggle={this.props.careQ}
-                    />   
-                    <br/>
+                    <Subheader>选择居住的城市</Subheader>
+                    <RadioButtonGroup
+                        name="city"
+                        onChange={this.props.cityQ}>
+                        {radioBtn}
+                    </RadioButtonGroup>
+                </div>
+                <Divider/>
+                <div>
+                    <Subheader>选择居住房型</Subheader>
+                    <RadioButtonGroup
+                        name="houseType"
+                        defaultSelected={this.props.house_type}
+                        onChange={this.props.houseQ}
+                        >
+                        <RadioButton
+                            value="1b1b"
+                            label="一房一卫"
+                            style={styles.radioButton}
+                            />
+                        <RadioButton
+                            value="2b1b"
+                            label="两房一卫"
+                            style={styles.radioButton}
+                            />
+                    </RadioButtonGroup>
+                </div>
+                <Divider/>
+                <div>
+                 <Subheader>是否需要请月嫂</Subheader>
+                    <Checkbox
+                        label="需要"
+                        value="yes"
+                        style={styles.checkbox}
+                        onCheck={this.props.careQ}
+                        />
                 </div>
             </div>
 
@@ -58,9 +85,16 @@ class House extends Component {
 }
 
 const mapStateToProps = (state) => {
+    let cities = []
+    for (var index = 0; index < mediacalData.length; index++) {
+        if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
+            cities = mediacalData[index].cities
+        }
+    }
     return {
         house_type: state.calcReducer.house_type,
-        need_care: state.calcReducer.need_care
+        need_care: state.calcReducer.need_care,
+        cities: cities
     }
 }
 
@@ -72,10 +106,16 @@ const mapDispatchToProps = (dispatch) => {
             }
             dispatch(houseAction(payload))
         },
-        careQ: (e) => {
-
+        cityQ: (e) => {
             let payload = {
-                value: e.target.value === "on" ? true : false
+                value: e.target.value
+            }
+            dispatch(cityAction(payload))
+        },
+        careQ: (e, isChecked) => {
+            console.log(isChecked)
+            let payload = {
+                value: isChecked
             }
             dispatch(careAction(payload))
         }

@@ -47,6 +47,13 @@ export const carAction = (payload) => {
     }
 }
 
+export const cityAction = (payload) => {
+    return {
+        type: 'Q_CITY',
+        payload
+    }
+}
+
 export const finishAction = () => {
     return {
         type: 'A_FINISH',

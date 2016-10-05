@@ -3,6 +3,7 @@ const initialState = {
     hospital_name: 'Cedars-Sinai Medical Center',
     production_type: 'nature',
     doctor_name: '',
+    city: '',
     stay_days: '',
     house_type: '1b1b',
     need_care: false,
@@ -30,6 +31,12 @@ const calcReducer = (state = initialState, action) => {
                 {},
                 state,
                 { doctor_name: action.payload.value }
+            )
+        case 'Q_CITY':
+            return Object.assign(
+                {},
+                state,
+                { city: action.payload.value }
             )
         case 'Q_DAYS':
             return Object.assign(
