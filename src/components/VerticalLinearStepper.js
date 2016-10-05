@@ -48,14 +48,15 @@ class VerticalLinearStepper extends React.Component {
     }
 
     render() {
-        const title = "估计花销" + this.props.total_price + "人民币"
+        const title = "估计花销 " + this.props.total_price + " 人民币"
         let medical = ""
         if(this.props.choise.production_type === 'nature')  {medical += "顺产"} else {medical += "剖腹产"}
         medical += " 医院 " + this.props.choise.hospital_name
         medical += " 医生" + this.props.choise.doctor_name
         
         let living = ""
-        living += " 在美逗留" + this.props.choise.stay_days + "天, 住宿为"
+        living += " 在美逗留" + this.props.choise.stay_days + "天,"
+        living += "住在 " + this.props.choise.city + ", 房型为"
         if(this.props.choise.house_type === '1b1b') {living += "一房一卫, "} else {living += "两房一卫, "}
         if(this.props.choise.need_care) {living += "需要月嫂,"} else {living += "不需要月嫂,"}
         if(this.props.choise.car_type === 'uber'){living += "交通方式为公交+uber"} else {living += "交通方式为自己租车"}
