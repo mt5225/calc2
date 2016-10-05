@@ -249,7 +249,7 @@ function calcPrice(state) {
     }
 
     let tmp = house_price.match(re)[0]
-    let house_price_days = Math.round(parseInt(state.stay_days, 10) * parseInt(tmp, 10) / 30)
+    let house_price_days = parseInt(state.stay_days, 10) * parseInt(tmp, 10) / 30
     console.log(house_price_days)
     
     total += usd2rmb(house_price, house_price_days)
@@ -266,7 +266,9 @@ function calcPrice(state) {
     } else {
         commute_base_fee = 1500
     }
-    total += Math.round(parseInt(state.stay_days, 10) * commute_base_fee / 30) * USD2RMB
+    total += parseInt(state.stay_days, 10) * commute_base_fee / 30 * USD2RMB 
+
+    total = Math.round(total)
 
     return total.toString()
 }
