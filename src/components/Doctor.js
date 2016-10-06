@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import { mediacalData } from '../services/dataService'
-import { doctorAction,enableNextAction } from '../actions'
+import { doctorAction } from '../actions'
+import Description from './Description'
+import * as CONSTANTS from '../services/constants'
 
 class Doctor extends Component {
     render() {
@@ -27,6 +29,15 @@ class Doctor extends Component {
                 )
             }
         )
+        let details = ''
+        if (this.props.doctorDetail) {
+            details = this.props.doctorDetail.description +
+                ', 报价： 顺产 ' + 
+                this.props.doctorDetail.price_normal + 
+                '，剖腹产 ' +
+                this.props.doctorDetail.csection +
+                '.'
+        }
         return (
             <div>
                 <br/>
@@ -37,6 +48,10 @@ class Doctor extends Component {
                     {radioBtn}
                 </RadioButtonGroup>
                 <br/>
+                <Description
+                    style={this.props.style}
+                    content={details}
+                    />
             </div>
         );
     }
@@ -44,14 +59,23 @@ class Doctor extends Component {
 
 const mapStateToProps = (state) => {
     let doctorlist = []
-    for (var index = 0; index < mediacalData.length; index++) {
+    for (let index = 0; index < mediacalData.length; index++) {
         if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
-            doctorlist =  mediacalData[index].doctors
+            doctorlist = mediacalData[index].doctors
         }
     }
+    let doctor = {}
+    for (let index = 0; index < doctorlist.length; index++) {
+        if (doctorlist[index].name === state.calcReducer.doctor_name) {
+            doctor = doctorlist[index]
+        }
+    }
+
     return {
         doctors: doctorlist,
         doctorSelected: state.calcReducer.doctor_name,
+        doctorDetail: doctor,
+        style: state.uiReducer.step_1_doctor_desc === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement,
     }
 }
 
@@ -62,7 +86,6 @@ const mapDispatchToProps = (dispatch) => {
                 value: e.target.value
             }
             dispatch(doctorAction(payload))
-            dispatch(enableNextAction())
         },
     }
 }

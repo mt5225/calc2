@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import Subheader from 'material-ui/Subheader'
 import { carAction } from '../actions'
 
 class Car extends Component {
@@ -15,7 +16,7 @@ class Car extends Component {
         }
         return (
             <div>
-                 <br/>
+                 <Subheader>租车:1500USD/月，公交+uber每月约200USD</Subheader>
                  <RadioButtonGroup 
                  name="carType"
                  defaultSelected={this.props.car_type} 

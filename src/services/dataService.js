@@ -1,49 +1,53 @@
-const USD2RMB = 6.8
+export const USD_RATE = 6.8
 
-const mediacalData = [
+export const mediacalData = [
     {
         id: "30bd68a8-c55e-4f5c-8914-905a756a97f7",
         hospital: "Cedars-Sinai Medical Center",
         hospital_cn: "雪松西奈山",
         address: "8700 Beverly Blvd, Los Angeles, CA 90048",
-        description: "Cedars-Sinai Medical Center",
+        description: "雪松西奈山医院的描述",
         price: {
-            normal: "21310 rmb",
-            csection: "29600 rmb"
+            normal: "21310 RMB",
+            csection: "29600 RMB"
         },
         doctors: [
             {
                 name: "Erica T.Wang",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Iiana Cass",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
 
             {
                 name: "Bryna Harwood",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Sarah Kilpatrick",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
         ],
         cities: [
             {
                 name: "Beverly Hills",
-                room_2b1b: "5500 usd",
-                room_1b1b: "5000 usd"
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
             },
             {
                 name: "San Monica",
-                room_2b1b: "5500 usd",
-                room_1b1b: "5000 usd"
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
             }
         ],
     },
@@ -52,39 +56,42 @@ const mediacalData = [
         hospital: " UCLA Medical Center",
         hospital_cn: "加州大学洛杉矶分校医疗中心",
         address: "757 Westwood Plaza, Los Angeles, CA 90095",
-        description: " UCLA Medical Center",
+        description: "描述: UCLA Medical Center",
         price: {
-            normal: "16000 rmb",
-            csection: "29000 rmb"
+            normal: "16000 RMB",
+            csection: "29000 RMB"
         },
         doctors: [
             {
                 name: "Andrea Rapkin",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Angela Chen",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
 
             {
                 name: "Robin Rarias-Eisner",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
         ],
         cities: [
             {
                 name: "Beverly Hills",
-                room_2b1b: "5500 usd",
-                room_1b1b: "5000 usd"
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
             },
             {
                 name: "San Monica",
-                room_2b1b: "5500 usd",
-                room_1b1b: "5000 usd"
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
             }
         ],
     },
@@ -93,185 +100,93 @@ const mediacalData = [
         hospital: "Huntington Memorial Hospital",
         hospital_cn: "亨廷顿医院",
         address: "100 W California Blvd, Pasadena, CA 91105",
-        description: "Huntington Memorial Hospital",
+        description: "亨廷顿医院描述",
         price: {
-            normal: "4724 rmb",
-            csection: "9143 rmb"
+            normal: "4724 RMB",
+            csection: "9143 RMB"
         },
         doctors: [
             {
                 name: "Cindy Chou 周黄心滢",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Doryth C Hong 洪淳",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Shaun P.Grandy",
-                price_normal: "2500 usd",
-                csection: "2500 usd"
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Bryan Jick",
-                price_normal: "3900 usd",
-                csection: "4800 usd"
+                price_normal: "3900 USD",
+                csection: "4800 USD",
+                description: "医生描述"
             },
             {
                 name: "Eleanor Leung",
-                price_normal: "3000 usd",
-                csection: "3000 usd"
+                price_normal: "3000 USD",
+                csection: "3000 USD",
+                description: "医生描述"
             },
             {
                 name: "Deborah Yu",
-                price_normal: "1900 usd",
-                csection: "2700 usd"
+                price_normal: "1900 USD",
+                csection: "2700 USD",
+                description: "医生描述"
             },
             {
                 name: "John C Chiang 江昭璋",
-                price_normal: "1800 usd",
-                csection: "2500 usd"
+                price_normal: "1800 USD",
+                csection: "2500 USD",
+                description: "医生描述"
             },
             {
                 name: "Tsang Hung Chang 张赞煌顺",
-                price_normal: "1100 usd",
-                csection: "1600 usd"
+                price_normal: "1100 USD",
+                csection: "1600 USD",
+                description: "医生描述"
             },
         ],
         cities: [
             {
                 name: "Pasadena",
-                room_2b1b: "5000 usd",
-                room_1b1b: "4500 usd"
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
             },
             {
                 name: "Glendale",
-                room_2b1b: "5000 usd",
-                room_1b1b: "4500 usd"
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
             },
             {
                 name: "Arcadia",
-                room_2b1b: "5000 usd",
-                room_1b1b: "4500 usd"
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
             },
             {
                 name: "Ahambra",
-                room_2b1b: "4000 usd",
-                room_1b1b: "3500 usd"
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
             },
             {
                 name: "San Gabriel",
-                room_2b1b: "4000 usd",
-                room_1b1b: "3500 usd"
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
             },
             {
                 name: "Temple City",
-                room_2b1b: "4000 usd",
-                room_1b1b: "3500 usd"
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
             },
         ],
     },
 ]
-
-const miscData = {
-    care_price: "4500 usd",
-    living_price: "33.3 usd",
-    car: {
-        public: "6.7 usd",
-        rent: "50 usd",
-    }
-}
-
-
-
-function usd2rmb(originStr, orginPrice) {
-    return /usd$/.test(originStr) ? orginPrice * USD2RMB : orginPrice
-}
-
-function calcPrice(state) {
-    let total = 0
-    let hospital = {}
-    const re = /^\d+/
-    //1. find hospital
-    for (var index = 0; index < mediacalData.length; index++) {
-        if (mediacalData[index].hospital === state.hospital_name) {
-            hospital = mediacalData[index]
-        }
-    }
-    console.log(hospital)
-    //2. find doctors
-    let doctor = {}
-    for (let i = 0; i < hospital['doctors'].length; i++) {
-        if (hospital['doctors'][i].name === state.doctor_name) {
-            doctor = hospital['doctors'][i]
-        }
-    }
-
-    //3. calculate cost for hospital and doctor
-    if (state.production_type === 'nature') {
-        // hospital cost
-        let originStr = hospital['price']['normal']
-        let tmp = hospital['price']['normal'].match(re)[0]
-        total += usd2rmb(originStr, parseInt(tmp, 10))
-
-        //  doctor cost
-        originStr = doctor.price_normal
-        tmp = doctor.price_normal.match(re)[0]
-        total += usd2rmb(originStr, parseInt(tmp, 10))
-    } else {
-        //hospital cost
-        let originStr = hospital['price']['csection']
-        let tmp = hospital['price']['csection'].match(re)[0]
-        total += usd2rmb(originStr, parseInt(tmp, 10))
-        //  doctor cost
-        originStr = doctor.csection
-        tmp = doctor.csection.match(re)[0]
-        total += usd2rmb(originStr, parseInt(tmp, 10))
-    }
-
-    //4. caculate living fee 
-
-    //4.1 get city
-    let city = {}
-    for (let i = 0; i < hospital['cities'].length; i++) {
-        if (hospital['cities'][i].name === state.city) {
-            city = hospital['cities'][i]
-        }
-    }
-    console.log(city)
-    let house_price = ''
-    if (state.house_type === '1b1b') {
-        house_price = city.room_1b1b
-    } else {
-        house_price = city.room_2b1b
-    }
-
-    let tmp = house_price.match(re)[0]
-    let house_price_days = parseInt(state.stay_days, 10) * parseInt(tmp, 10) / 30
-    console.log(house_price_days)
-    
-    total += usd2rmb(house_price, house_price_days)
-
-    //4.2 if need care_price
-    if(state.need_care) {
-        total +=  6000 * USD2RMB
-    }
-
-    //4.3 commute fee
-    let commute_base_fee = 0
-    if(state.car_type === 'uber') {
-        commute_base_fee = 200
-    } else {
-        commute_base_fee = 1500
-    }
-    total += parseInt(state.stay_days, 10) * commute_base_fee / 30 * USD2RMB 
-
-    total = Math.round(total)
-
-    return total.toString()
-}
-
-export { mediacalData, miscData, calcPrice }
 

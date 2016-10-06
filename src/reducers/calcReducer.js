@@ -1,13 +1,13 @@
-import { calcPrice } from '../services/dataService'
+import calcPrice from '../services/calc'
 const initialState = {
-    hospital_name: 'Cedars-Sinai Medical Center',
-    production_type: 'nature',
+    hospital_name: '',
+    production_type: '',
     doctor_name: '',
     city: '',
     stay_days: '',
-    house_type: '1b1b',
+    house_type: '',
     need_care: false,
-    car_type: 'uber',
+    car_type: '',
     total_price: 0,
 }
 

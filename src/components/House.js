@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import Divider from 'material-ui/Divider'
 import Checkbox from 'material-ui/Checkbox'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import Subheader from 'material-ui/Subheader';
+import Subheader from 'material-ui/Subheader'
 import { mediacalData } from '../services/dataService'
 import { houseAction, careAction, cityAction } from '../actions'
+import Description from './Description'
+import * as CONSTANTS from '../services/constants'
 
 class House extends Component {
 
@@ -38,16 +40,31 @@ class House extends Component {
                 )
             }
         )
+        let details = ''
+        if (this.props.cityDetail) {
+            details = '一房一卫 ' +
+                this.props.cityDetail.room_1b1b +
+                '， ' +
+                '两房一卫 ' +
+                this.props.cityDetail.room_1b1b +
+                '.'
+        }
         return (
             <div>
                 <div>
                     <Subheader>选择居住的城市</Subheader>
                     <RadioButtonGroup
                         name="city"
-                        onChange={this.props.cityQ}>
+                        onChange={this.props.cityQ}
+                        defaultSelected={this.props.cityName}
+                        >
                         {radioBtn}
                     </RadioButtonGroup>
                 </div>
+                <Description
+                    style={this.props.style}
+                    content={details}
+                    />
                 <Divider/>
                 <div>
                     <Subheader>选择居住房型</Subheader>
@@ -70,7 +87,7 @@ class House extends Component {
                 </div>
                 <Divider/>
                 <div>
-                 <Subheader>是否需要请月嫂</Subheader>
+                    <Subheader>是否需要请月嫂</Subheader>
                     <Checkbox
                         label="需要"
                         value="yes"
@@ -86,15 +103,26 @@ class House extends Component {
 
 const mapStateToProps = (state) => {
     let cities = []
-    for (var index = 0; index < mediacalData.length; index++) {
+    for (let index = 0; index < mediacalData.length; index++) {
         if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
             cities = mediacalData[index].cities
+        }
+    }
+
+    //find city rent detail by state
+    let city = {}
+    for (let index = 0; index < cities.length; index++) {
+        if (cities[index].name === state.calcReducer.city) {
+            city = cities[index]
         }
     }
     return {
         house_type: state.calcReducer.house_type,
         need_care: state.calcReducer.need_care,
-        cities: cities
+        cities: cities,
+        cityName: state.calcReducer.city,
+        cityDetail: city,
+        style: state.uiReducer.step_3_city_house_rent === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement,
     }
 }
 
