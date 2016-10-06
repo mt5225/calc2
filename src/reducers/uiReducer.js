@@ -24,6 +24,8 @@ const uiReducer = (state = initialState, action) => {
                 state,
                 { step_3_city_house_rent: 'show' }
             )
+        case 'A_RESET':
+            return initialState
         default:
             return state
     }
