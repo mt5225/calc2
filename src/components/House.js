@@ -110,19 +110,26 @@ const mapStateToProps = (state) => {
     }
 
     //find city rent detail by state
-    let city = {}
+    let city = null
     for (let index = 0; index < cities.length; index++) {
         if (cities[index].name === state.calcReducer.city) {
             city = cities[index]
         }
     }
+
+    let style = state.uiReducer.step_3_city_house_rent === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement
+    
+    if(!city) {
+        style = CONSTANTS.hideElement
+    }
+
     return {
         house_type: state.calcReducer.house_type,
         need_care: state.calcReducer.need_care,
         cities: cities,
         cityName: state.calcReducer.city,
         cityDetail: city,
-        style: state.uiReducer.step_3_city_house_rent === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement,
+        style: style,
     }
 }
 

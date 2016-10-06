@@ -47,7 +47,6 @@ class Doctor extends Component {
                     onChange={this.props.doctorQ}>
                     {radioBtn}
                 </RadioButtonGroup>
-                <br/>
                 <Description
                     style={this.props.style}
                     content={details}
@@ -64,18 +63,21 @@ const mapStateToProps = (state) => {
             doctorlist = mediacalData[index].doctors
         }
     }
-    let doctor = {}
+    let doctor = null
     for (let index = 0; index < doctorlist.length; index++) {
         if (doctorlist[index].name === state.calcReducer.doctor_name) {
             doctor = doctorlist[index]
         }
     }
-
+    let style = state.uiReducer.step_1_doctor_desc === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement
+    if(!doctor) {
+        style = CONSTANTS.hideElement
+    }
     return {
         doctors: doctorlist,
         doctorSelected: state.calcReducer.doctor_name,
         doctorDetail: doctor,
-        style: state.uiReducer.step_1_doctor_desc === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement,
+        style: style,
     }
 }
 
