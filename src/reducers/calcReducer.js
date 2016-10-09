@@ -4,7 +4,7 @@ const initialState = {
     production_type: '',
     doctor_name: '',
     city: '',
-    stay_days: '',
+    stay_days: 60,
     house_type: '',
     need_care: false,
     car_type: '',

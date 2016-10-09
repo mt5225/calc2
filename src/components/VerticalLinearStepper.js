@@ -12,7 +12,7 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card'
 import {List, ListItem} from 'material-ui/List'
 import Hospital from './Hospital'
 import Doctor from './Doctor'
-import StayDays from './StayDays'
+import SliderSelectDays from './SliderSelectDays'
 import House from './House'
 import Car from './Car'
 import { finishAction, nextAction, prevAction, resetAction } from '../actions'
@@ -114,7 +114,7 @@ class VerticalLinearStepper extends React.Component {
                     <Step>
                         <StepLabel>逗留时间</StepLabel>
                         <StepContent>
-                            <StayDays/>
+                            <SliderSelectDays/>
                             {this.renderStepActions(2) }
                         </StepContent>
                     </Step>
