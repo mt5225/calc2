@@ -19,3 +19,10 @@ export function getDoctorListByHospitalName(hospital_name) {
     }
     return doctorList
 }
+
+export function canGoNext(currentAnsware, currentStep) {
+    return {
+        message: '请选择医院',
+        status: false
+    }
+}

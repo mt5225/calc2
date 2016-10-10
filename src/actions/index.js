@@ -1,3 +1,5 @@
+import * as UTIL from '../services/util'
+
 export const hospitalAction = (payload) => {
     return {
         type: 'Q_HOSPITAL',
@@ -66,12 +68,6 @@ export const nextAction = () => {
     }
 }
 
-export const nextActionVerify = () => {
-   return(dispatch, getState) => {
-       dispatch(nextAction())
-   }
-}
-
 export const prevAction = () => {
     return {
         type: 'A_PREV',
@@ -102,5 +98,31 @@ export const vDaysAction = (payload) => {
     return {
         type: 'V_DAYS',
         payload
+    }
+}
+
+export const vNeedInputAction = (payload) => {
+    return {
+        type: 'V_INVALID_NEXT',
+        payload
+    }
+}
+
+//verify each step
+export const nextActionVerify = () => {
+    return (dispatch, getState) => {
+        const result = UTIL.canGoNext(getState().calcReducer, getState().stepReducer.stepIndex)
+        if (result.status) {
+            dispatch(nextAction())
+        } else {
+            dispatch(vNeedInputAction(result))
+        }
+
+    }
+}
+
+export const snackBarCloseAction = () => {
+    return {
+        type: 'A_SNACKBAR_CLOSE'
     }
 }

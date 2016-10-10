@@ -1,15 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Step,Stepper,StepLabel,StepContent } from 'material-ui/Stepper'
+import { Step, Stepper, StepLabel, StepContent } from 'material-ui/Stepper'
 import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
+import Snackbar from 'material-ui/Snackbar'
 import Hospital from './Hospital'
 import Doctor from './Doctor'
 import SliderSelectDays from './SliderSelectDays'
 import House from './House'
 import Car from './Car'
 import Result from './Result'
-import { finishAction, nextActionVerify, nextAction, prevAction } from '../actions'
+import { finishAction, nextActionVerify, nextAction, prevAction,snackBarCloseAction } from '../actions'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -35,7 +36,7 @@ class VerticalLinearStepper extends React.Component {
                             disableFocusRipple={true}
                             onTouchTap={this.props.prevAction}
                             />
-                    ) }
+                    )}
                 </div>
             );
         }
@@ -48,45 +49,52 @@ class VerticalLinearStepper extends React.Component {
                     <Step>
                         <StepLabel>选择医院与生产方式</StepLabel>
                         <StepContent>
-                            <Hospital/>
-                            {this.renderStepActions(0) }
+                            <Hospital />
+                            {this.renderStepActions(0)}
                         </StepContent>
                     </Step>
                     <Step>
 
                         <StepLabel>选择医生</StepLabel>
                         <StepContent>
-                            <Doctor/>
-                            {this.renderStepActions(1) }
+                            <Doctor />
+                            {this.renderStepActions(1)}
                         </StepContent>
                     </Step>
                     <Step>
                         <StepLabel>逗留时间</StepLabel>
                         <StepContent>
-                            <SliderSelectDays/>
-                            {this.renderStepActions(2) }
+                            <SliderSelectDays />
+                            {this.renderStepActions(2)}
                         </StepContent>
                     </Step>
                     <Step>
                         <StepLabel>住宿与生活</StepLabel>
                         <StepContent>
-                            <House/>
-                            {this.renderStepActions(3) }
+                            <House />
+                            {this.renderStepActions(3)}
                         </StepContent>
                     </Step>
                     <Step>
                         <StepLabel>交通</StepLabel>
                         <StepContent>
-                            <Car/>
-                            {this.renderStepActions(4) }
+                            <Car />
+                            {this.renderStepActions(4)}
                         </StepContent>
                     </Step>
                 </Stepper>
                 {this.props.finished && (
                     <div style={{ margin: '20px 0' }}>
-                       <Result/>
+                        <Result />
                     </div>
-                ) }
+                )}
+
+                <Snackbar
+                    open={this.props.snackBarState.showStepWarning}
+                    message={this.props.snackBarState.warningMessage}
+                    autoHideDuration={2000}
+                    onRequestClose={this.props.snackBarCloseAction}
+                    />
             </div>
         );
     }
@@ -99,7 +107,8 @@ const mapStateToProps = (state) => {
         stayDays: state.calcReducer.stay_days,
         nextBtnDisable: state.stepReducer.nextBtnDisable,
         total_price: state.calcReducer.total_price,
-        choise:state.calcReducer
+        choise: state.calcReducer,
+        snackBarState: state.validateReducer
     }
 }
 
@@ -115,6 +124,9 @@ const mapDispatchToProps = (dispatch) => {
         prevAction: () => {
             dispatch(prevAction())
         },
+        snackBarCloseAction: () => {
+            dispatch(snackBarCloseAction())
+        }
     }
 }
 
