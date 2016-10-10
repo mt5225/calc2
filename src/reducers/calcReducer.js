@@ -9,6 +9,8 @@ const initialState = {
     need_care: false,
     car_type: '',
     total_price: 0,
+    total_medical_price: 0,
+    total_living_price: 0,
 }
 
 
@@ -65,11 +67,15 @@ const calcReducer = (state = initialState, action) => {
         case 'A_RESET':
             return initialState
         case 'A_FINISH':
-            const total_price = calcPrice(state)
+            const price = calcPrice(state)
             return Object.assign(
                 {},
                 state,
-                { total_price: total_price }
+                {
+                    total_price: price.total_price,
+                    total_medical_price: price.total_medical_price,
+                    total_living_price: price.total_living_price,
+                }
             )
         default:
             return state

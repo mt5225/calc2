@@ -6,7 +6,7 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader'
 import { mediacalData } from '../services/dataService'
 import { houseAction, careAction, cityAction } from '../actions'
-import Description from './Description'
+import LivingDetails from './LivingDetails'
 import * as CONSTANTS from '../services/constants'
 
 class House extends Component {
@@ -61,7 +61,7 @@ class House extends Component {
                         {radioBtn}
                     </RadioButtonGroup>
                 </div>
-                <Description
+                <LivingDetails
                     style={this.props.style}
                     content={details}
                     />
@@ -87,7 +87,7 @@ class House extends Component {
                 </div>
                 <Divider/>
                 <div>
-                    <Subheader>是否需要请月嫂</Subheader>
+                    <Subheader>月嫂服务,约6,000USD含20%小费</Subheader>
                     <Checkbox
                         label="需要"
                         value="yes"

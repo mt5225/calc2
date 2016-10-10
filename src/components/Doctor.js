@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import { mediacalData } from '../services/dataService'
 import { doctorAction } from '../actions'
-import Description from './Description'
+import DoctorDetail from './DoctorDetail'
 import * as CONSTANTS from '../services/constants'
 
 class Doctor extends Component {
@@ -47,7 +47,7 @@ class Doctor extends Component {
                     onChange={this.props.doctorQ}>
                     {radioBtn}
                 </RadioButtonGroup>
-                <Description
+                <DoctorDetail
                     style={this.props.style}
                     content={details}
                     />

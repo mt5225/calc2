@@ -31,21 +31,15 @@ class Hospital extends Component {
                 marginBottom: 16,
             },
         }
-        let details = ''
-        if (this.props.hospitalDetail) {
-            details = this.props.hospitalDetail.description +
-                ', ' +
-                ' 地址: ' +
-                this.props.hospitalDetail.address
-        }
+
         return (
-            < div >
+            <div>
                 <Subheader> 选择医院 </Subheader>
                 <DropDownMenu value={this.props.hospital} onChange={this.props.hospitalQ} openImmediately={true}>
                     {menuItem}
                 </DropDownMenu>
                 <br/>
-                <Description style={this.props.style}  content={details} />
+                <Description style={this.props.style}  detail={this.props.hospitalDetail} />
                 <Divider/>
                 <br/>
                 <Subheader> 选择生产方式 </Subheader>

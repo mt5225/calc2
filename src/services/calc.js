@@ -44,7 +44,7 @@ function calcPrice(state) {
         tmp = doctor.csection.match(re)[0]
         total += usd2rmb(originStr, parseInt(tmp, 10))
     }
-
+    const total_medical_price = total
     //4. caculate living fee 
 
     //4.1 get city
@@ -84,7 +84,11 @@ function calcPrice(state) {
 
     total = Math.round(total)
 
-    return total.toString()
+    return {
+        total_price : total,
+        total_medical_price: total_medical_price,
+        total_living_price: total - total_medical_price
+    }
 }
 
 export default calcPrice
