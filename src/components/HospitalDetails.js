@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import Paper from 'material-ui/Paper'
 import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table'
 
-class Description extends Component {
+class HospitalDetails extends Component {
 
     render() {
         let hospital_detail = ''
@@ -17,7 +17,7 @@ class Description extends Component {
         }
 
 
-        if (Object.keys(this.props.detail).length > 0) {
+        if (this.props.detail) {
             const price = '顺产: ' +
                 this.props.detail.price.normal +
                 ', 剖腹产: ' +
@@ -73,9 +73,9 @@ class Description extends Component {
     }
 }
 
-Description.propTypes = {
-    detail: PropTypes.object.isRequired,
+HospitalDetails.propTypes = {
+    detail: PropTypes.object,
     style: PropTypes.object.isRequired,
 };
 
-export default Description
+export default HospitalDetails

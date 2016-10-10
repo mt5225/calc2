@@ -3,13 +3,13 @@ import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader'
-import Divider from 'material-ui/Divider'
-
 import { mediacalData } from '../services/dataService'
 import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
-import Description from './Description'
+import HospitalDetails from './HospitalDetails'
+import GenericDetails from './GenericDetails'
 import * as CONSTANTS from '../services/constants'
+import * as UTIL from '../services/util'
 
 class Hospital extends Component {
     render() {
@@ -39,9 +39,7 @@ class Hospital extends Component {
                     {menuItem}
                 </DropDownMenu>
                 <br/>
-                <Description style={this.props.style}  detail={this.props.hospitalDetail} />
-                <Divider/>
-                <br/>
+                <HospitalDetails style={this.props.hospitalDetailStyle}  detail={this.props.hospitalDetail} />
                 <Subheader> 选择生产方式 </Subheader>
                 <RadioButtonGroup name="productionType"
                     defaultSelected={this.props.production_type}
@@ -57,27 +55,30 @@ class Hospital extends Component {
                         style={styles.radioButton}
                         />
                 </RadioButtonGroup>
+                <GenericDetails style={this.props.PriceDetails} content={this.props.priceDetail}/>
             </div >
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    let hospitalDetail = {}
-    if (state.calcReducer.hospital_name.length > 1) {
-        for (var index = 0; index < mediacalData.length; index++) {
-            if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
-                hospitalDetail = mediacalData[index]
-            }
+    let hospitalDetail = UTIL.getHospitalDetailByName(state.calcReducer.hospital_name)
+    let priceDetail = '医院报价：'
+    if (hospitalDetail) {
+        if (state.calcReducer.production_type.length > 0) {
+            priceDetail += state.calcReducer.production_type === 'nature' ?
+                '顺产48小时 ' + hospitalDetail.price.normal : '剖腹产72小时 ' + hospitalDetail.price.csection
         }
-
     }
-
     return {
         hospital: state.calcReducer.hospital_name,
         production_type: state.calcReducer.production_type,
         hospitalDetail: hospitalDetail,
-        style: state.uiReducer.step_0_hospital_desc === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement
+        hospitalDetailStyle: state.uiReducer.step_0_hospital_desc === 'hidden' ?
+            CONSTANTS.hideElement : CONSTANTS.showElement,
+        PriceDetails: state.uiReducer.step_0_hospital_price === 'hidden' ?
+            CONSTANTS.hideElement : CONSTANTS.showElement,
+        priceDetail: priceDetail
     }
 }
 

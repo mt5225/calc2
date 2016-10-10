@@ -6,7 +6,7 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader'
 import { mediacalData } from '../services/dataService'
 import { houseAction, careAction, cityAction } from '../actions'
-import LivingDetails from './LivingDetails'
+import GenericDetails from './GenericDetails'
 import * as CONSTANTS from '../services/constants'
 
 class House extends Component {
@@ -61,7 +61,7 @@ class House extends Component {
                         {radioBtn}
                     </RadioButtonGroup>
                 </div>
-                <LivingDetails
+                <GenericDetails
                     style={this.props.style}
                     content={details}
                     />

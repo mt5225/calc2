@@ -1,5 +1,6 @@
 const initialState = {
     step_0_hospital_desc: 'hidden',
+    step_0_hospital_price: 'hidden',
     step_1_doctor_desc: 'hidden',
     step_3_city_house_rent: 'hidden',
 }
@@ -11,6 +12,12 @@ const uiReducer = (state = initialState, action) => {
                 {},
                 state,
                 { step_0_hospital_desc: 'show' }
+            )
+        case 'Q_PRODUCTION':
+            return Object.assign(
+                {},
+                state,
+                { step_0_hospital_price: 'show' }
             )
         case 'Q_DOCTOR':
             return Object.assign(
