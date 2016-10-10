@@ -21,26 +21,46 @@ export const mediacalData = [
                 name: "Erica T.Wang",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx",
+                tel: "1223",
+                hospital: "xxx",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
             },
             {
                 name: "Iiana Cass",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx",
+                tel: "1223",
+                hospital: "xxx",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
             },
 
             {
                 name: "Bryna Harwood",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Sarah Kilpatrick",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
         ],
         cities: [
@@ -76,20 +96,35 @@ export const mediacalData = [
                 name: "Andrea Rapkin",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Angela Chen",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
 
             {
                 name: "Robin Rarias-Eisner",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
         ],
         cities: [
@@ -125,49 +160,89 @@ export const mediacalData = [
                 name: "Cindy Chou 周黄心滢",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Doryth C Hong 洪淳",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Shaun P.Grandy",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Bryan Jick",
                 price_normal: "3900 USD",
                 csection: "4800 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Eleanor Leung",
                 price_normal: "3000 USD",
                 csection: "3000 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Deborah Yu",
                 price_normal: "1900 USD",
                 csection: "2700 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "John C Chiang 江昭璋",
                 price_normal: "1800 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Tsang Hung Chang 张赞煌顺",
                 price_normal: "1100 USD",
                 csection: "1600 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
         ],
         cities: [
@@ -223,20 +298,35 @@ export const mediacalData = [
                 name: "Andrea Rapkin",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
             {
                 name: "Angela Chen",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
 
             {
                 name: "Robin Rarias-Eisner",
                 price_normal: "2500 USD",
                 csection: "2500 USD",
-                description: "医生描述"
+                address: "xxx", 
+                tel: "1223", 
+                hospital: "xxx", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
             },
         ],
         cities: [

@@ -6,6 +6,7 @@ import 'flexboxgrid/css/flexboxgrid.css'
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import createLogger from 'redux-logger'
+import thunk from 'redux-thunk'
 import calcApp from './reducers'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
@@ -15,7 +16,7 @@ const logger = createLogger()
 
 const store = createStore(
   calcApp,
-  applyMiddleware(logger)
+  applyMiddleware(logger, thunk)
 )
 
 ReactDOM.render(

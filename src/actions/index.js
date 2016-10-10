@@ -66,6 +66,12 @@ export const nextAction = () => {
     }
 }
 
+export const nextActionVerify = () => {
+   return(dispatch, getState) => {
+       dispatch(nextAction())
+   }
+}
+
 export const prevAction = () => {
     return {
         type: 'A_PREV',

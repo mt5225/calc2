@@ -4,6 +4,7 @@ import MenuItem from 'material-ui/MenuItem'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader'
 import { mediacalData } from '../services/dataService'
+import Snackbar from 'material-ui/Snackbar'
 import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
 import HospitalDetails from './HospitalDetails'
@@ -78,7 +79,7 @@ const mapStateToProps = (state) => {
             CONSTANTS.hideElement : CONSTANTS.showElement,
         PriceDetails: state.uiReducer.step_0_hospital_price === 'hidden' ?
             CONSTANTS.hideElement : CONSTANTS.showElement,
-        priceDetail: priceDetail
+        priceDetail: priceDetail,
     }
 }
 

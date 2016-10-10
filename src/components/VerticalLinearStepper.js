@@ -9,7 +9,7 @@ import SliderSelectDays from './SliderSelectDays'
 import House from './House'
 import Car from './Car'
 import Result from './Result'
-import { finishAction, nextAction, prevAction } from '../actions'
+import { finishAction, nextActionVerify, nextAction, prevAction } from '../actions'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -106,11 +106,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         finishAction: () => {
-            dispatch(finishAction())
             dispatch(nextAction())
+            dispatch(finishAction())
         },
         nextAction: () => {
-            dispatch(nextAction())
+            dispatch(nextActionVerify())
         },
         prevAction: () => {
             dispatch(prevAction())

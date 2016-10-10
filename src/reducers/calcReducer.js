@@ -66,6 +66,7 @@ const calcReducer = (state = initialState, action) => {
             )
         case 'A_RESET':
             return initialState
+            
         case 'A_FINISH':
             const price = calcPrice(state)
             return Object.assign(
