@@ -44,10 +44,10 @@ class House extends Component {
         if (this.props.cityDetail) {
             details = '一房一卫 ' +
                 this.props.cityDetail.room_1b1b +
-                '， ' +
+                ' 每月， ' +
                 '两房一卫 ' +
                 this.props.cityDetail.room_1b1b +
-                '.'
+                ' 每月.'
         }
         return (
             <div>
