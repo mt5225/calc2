@@ -21,8 +21,46 @@ export function getDoctorListByHospitalName(hospital_name) {
 }
 
 export function canGoNext(currentAnsware, currentStep) {
-    return {
-        message: '请选择医院',
-        status: false
+    let result = {
+        message: '',
+        status: true
     }
+    switch (currentStep) {
+        case 0:
+            if (currentAnsware.hospital_name.length < 1 || currentAnsware.production_type.length < 1) {
+                result = {
+                    message: '请先选择医院及生产方式',
+                    status: false
+                }
+            }
+            break
+        case 1:
+            if (currentAnsware.doctor_name.length < 1) {
+                result = {
+                    message: '请先选择医生',
+                    status: false
+                }
+            }
+            break
+        case 3:
+            if (currentAnsware.city.length < 1 || currentAnsware.house_type.length < 1) {
+                result = {
+                    message: '请先选择居住城市与房型',
+                    status: false
+                }
+            }
+            break
+        case 4:
+            if (currentAnsware.car_type.length < 1) {
+                result = {
+                    message: '请先选择出行方式',
+                    status: false
+                }
+            }
+            break
+        default:
+
+    }
+
+    return result
 }

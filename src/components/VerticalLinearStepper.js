@@ -10,7 +10,7 @@ import SliderSelectDays from './SliderSelectDays'
 import House from './House'
 import Car from './Car'
 import Result from './Result'
-import { finishAction, nextActionVerify, nextAction, prevAction,snackBarCloseAction } from '../actions'
+import { nextActionVerify, prevAction,snackBarCloseAction } from '../actions'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -25,7 +25,7 @@ class VerticalLinearStepper extends React.Component {
                         disableFocusRipple={true}
                         primary={true}
                         disabled={this.props.nextBtnDisable}
-                        onTouchTap={this.props.stepIndex === 4 ? this.props.finishAction : this.props.nextAction}
+                        onTouchTap={this.props.nextAction}
                         style={{ marginRight: 12 }}
                         />
                     {step > 0 && (
@@ -92,7 +92,7 @@ class VerticalLinearStepper extends React.Component {
                 <Snackbar
                     open={this.props.snackBarState.showStepWarning}
                     message={this.props.snackBarState.warningMessage}
-                    autoHideDuration={2000}
+                    autoHideDuration={1200}
                     onRequestClose={this.props.snackBarCloseAction}
                     />
             </div>
@@ -114,10 +114,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        finishAction: () => {
-            dispatch(nextAction())
-            dispatch(finishAction())
-        },
         nextAction: () => {
             dispatch(nextActionVerify())
         },

@@ -113,6 +113,9 @@ export const nextActionVerify = () => {
     return (dispatch, getState) => {
         const result = UTIL.canGoNext(getState().calcReducer, getState().stepReducer.stepIndex)
         if (result.status) {
+            if (getState().stepReducer.stepIndex === 4) {
+                dispatch(finishAction())
+            }
             dispatch(nextAction())
         } else {
             dispatch(vNeedInputAction(result))
