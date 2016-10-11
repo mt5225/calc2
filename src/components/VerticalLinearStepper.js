@@ -55,14 +55,14 @@ class VerticalLinearStepper extends React.Component {
                     </Step>
                     <Step>
 
-                        <StepLabel>选择医生</StepLabel>
+                        <StepLabel>选择产科医生</StepLabel>
                         <StepContent>
                             <Doctor />
                             {this.renderStepActions(1)}
                         </StepContent>
                     </Step>
                     <Step>
-                        <StepLabel>逗留时间</StepLabel>
+                        <StepLabel>预计在美逗留时间</StepLabel>
                         <StepContent>
                             <SliderSelectDays />
                             {this.renderStepActions(2)}
