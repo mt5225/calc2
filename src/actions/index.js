@@ -56,12 +56,6 @@ export const cityAction = (payload) => {
     }
 }
 
-export const finishAction = () => {
-    return {
-        type: 'A_FINISH',
-    }
-}
-
 export const nextAction = () => {
     return {
         type: 'A_NEXT',
@@ -113,9 +107,6 @@ export const nextActionVerify = () => {
     return (dispatch, getState) => {
         const result = UTIL.canGoNext(getState().calcReducer, getState().stepReducer.stepIndex)
         if (result.status) {
-            if (getState().stepReducer.stepIndex === 4) {
-                dispatch(finishAction())
-            }
             dispatch(nextAction())
         } else {
             dispatch(vNeedInputAction(result))

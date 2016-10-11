@@ -4,14 +4,15 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card'
 import {List, ListItem} from 'material-ui/List'
 import FlatButton from 'material-ui/FlatButton'
 import { resetAction } from '../actions'
+import calcPrice from '../services/calc'
 
 class Result extends Component {
     render() {
-        const title = "估计花销 " + this.props.choise.total_price + " 人民币"
+        const title = "估计花销 " + this.props.price.total_price + " 人民币"
         let medicalTitle = "医院与医生: "
         medicalTitle += this.props.choise.production_type === 'nature' ? "顺产": "剖腹产"
         medicalTitle += "情况下,约"
-        medicalTitle += this.props.choise.total_medical_price
+        medicalTitle += this.props.price.total_medical_price
         medicalTitle += "人民币"
 
         let medical = "医院" + this.props.choise.hospital_name
@@ -20,7 +21,7 @@ class Result extends Component {
         let livingTitle = "食宿与交通: 逗留"
         livingTitle += this.props.choise.stay_days
         livingTitle += "天,约"
-        livingTitle += this.props.choise.total_living_price
+        livingTitle += this.props.price.total_living_price
         livingTitle += "人民币"
         let living = "住" + this.props.choise.city + ", 房型为"
         if (this.props.choise.house_type === '1b1b') { living += "一房一卫, " } else { living += "两房一卫, " }
@@ -64,8 +65,10 @@ class Result extends Component {
 }
 
 const mapStateToProps = (state) => {
+
     return {
         choise: state.calcReducer,
+        price: calcPrice(state.calcReducer)
     }
 }
 

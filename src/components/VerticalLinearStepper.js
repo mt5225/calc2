@@ -104,10 +104,6 @@ const mapStateToProps = (state) => {
     return {
         stepIndex: state.stepReducer.stepIndex,
         finished: state.stepReducer.finished,
-        stayDays: state.calcReducer.stay_days,
-        nextBtnDisable: state.stepReducer.nextBtnDisable,
-        total_price: state.calcReducer.total_price,
-        choise: state.calcReducer,
         snackBarState: state.validateReducer
     }
 }

@@ -1,4 +1,3 @@
-import calcPrice from '../services/calc'
 const initialState = {
     hospital_name: '',
     production_type: '',
@@ -8,9 +7,6 @@ const initialState = {
     house_type: '',
     need_care: false,
     car_type: '',
-    total_price: 0,
-    total_medical_price: 0,
-    total_living_price: 0,
 }
 
 
@@ -66,18 +62,6 @@ const calcReducer = (state = initialState, action) => {
             )
         case 'A_RESET':
             return initialState
-            
-        case 'A_FINISH':
-            const price = calcPrice(state)
-            return Object.assign(
-                {},
-                state,
-                {
-                    total_price: price.total_price,
-                    total_medical_price: price.total_medical_price,
-                    total_living_price: price.total_living_price,
-                }
-            )
         default:
             return state
     }
