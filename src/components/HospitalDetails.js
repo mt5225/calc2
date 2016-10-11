@@ -48,7 +48,7 @@ class HospitalDetails extends Component {
                         </TableRow>
                         <TableRow>
                             <TableRowColumn colSpan={3}>高风险孕妇服务</TableRowColumn>
-                            <TableRowColumn style={styles.td}>{this.props.detail.high_risk_service}</TableRowColumn>
+                            <TableRowColumn colSpan={2} style={styles.td}>{this.props.detail.high_risk_service}</TableRowColumn>
                         </TableRow>
                         <TableRow>
                             <TableRowColumn>网址</TableRowColumn>
