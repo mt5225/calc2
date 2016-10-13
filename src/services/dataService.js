@@ -1,3 +1,5 @@
+ /* eslint-disable */
+ 
 export const USD_RATE = 6.8
 
 export const mediacalData = [
