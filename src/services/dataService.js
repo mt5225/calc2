@@ -1,5 +1,5 @@
  /* eslint-disable */
- 
+
 export const USD_RATE = 6.8
 
 export const mediacalData = [
@@ -217,7 +217,7 @@ export const mediacalData = [
                 address: "N/A", 
                 tel: "N/A", 
                 hospital: "N/A", 
-                sex: "男", 
+                sex: "女", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
             },
@@ -244,7 +244,7 @@ export const mediacalData = [
                 has_cn_assistant: "是"
             },
             {
-                name: "Tsang Hung Chang 张赞煌顺",
+                name: "Tsang Hung Chang 张赞煌",
                 price_normal: "1100 USD",
                 csection: "1600 USD",
                 address: "N/A", 
@@ -1049,6 +1049,322 @@ export const mediacalData = [
                 name: "Glendale",
                 room_2b1b: "5000 USD",
                 room_1b1b: "4500 USD"
+            },
+        ],
+    },
+	{
+        id: "c36d4c73-caf5-49fd-a8ae-5b49b669926b",
+        hospital: " Whittier Hospital Medical Center  ",
+        hospital_cn: "惠提尔医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.whittierhospital.com",
+        NICU_bed: "N/A",
+        address: "1509 Wilson Terrace Glendale, CA 91206",
+        description: "惠提尔医院，位于于洛杉矶东部惠提尔，其定位是为当地社区提供医疗服务。惠提尔医院面积较小，共178个床位，设有产科及妇科，配备LDR(Labor & Delivery & Recovery)三合一病房，其产后恢复室分为双人房和单人房，配备专门的婴儿室",
+        price: {
+            normal: "3000 USD",
+            csection: "4080 USD"
+        },
+        doctors: [
+            {
+                name: "Hung-Chou Yen 颜鸿州",
+                price_normal: "3200 USD",
+                csection: "2300 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Abraham Han 韩鹏飞 ",
+                price_normal: "4100 USD",
+                csection: "2900 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+
+            {
+                name: "Jen-Kway Shen 沈仁贵",
+                price_normal: "2100 USD",
+                csection: "2100 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			{
+                name: "李端堂",
+                price_normal: "2500 USD",
+                csection: "2500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			{
+                name: "黄Hellen",
+                price_normal: "3000 USD",
+                csection: "2100 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+            {
+                name: "Whittier",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+            {
+                name: "Rowlan Heights",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+            {
+                name: "West Covina",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Monterey Park",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Fulleton",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+			{
+                name: "EI monte",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+        ],
+    },
+	{
+        id: "51e25bc9-bacc-43b4-babc-b5477a2386b1",
+        hospital: " Greater El Monte Community Hospital ",
+        hospital_cn: "洪恩医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.greaterelmonte.com",
+        NICU_bed: "N/A",
+        address: "1509 Wilson Terrace Glendale, CA 91206",
+        description: "宏恩医院，是一家位于加州爱尔梦地市的社区医院。医院本身较小，院内共计有117个病床位，同时拥有华人医生。产房为LDR Room，产后恢复为单人房，附设婴儿室无NICU，宏恩医院的生产价格非常便宜。",
+        price: {
+            normal: "2700 USD",
+            csection: "3200 USD"
+        },
+        doctors: [
+            
+            {
+                name: "Tsang Hung Chang 张赞煌",
+                price_normal: "1100 USD",
+                csection: "1600 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+
+            {
+                name: "Jen-Kway Shen 沈仁贵",
+                price_normal: "2100 USD",
+                csection: "3100 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			{
+                name: "Shirley M Cahng",
+                price_normal: "3000 USD",
+                csection: "4000 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			
+        ],
+        cities: [
+            {
+                name: "Whittier",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+            {
+                name: "Ahambra",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Temple City",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "West Covina",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Monterey Park",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "EI monte",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+        ],
+    },
+	{
+        id: "edb1e8a1-a0c8-4bdc-805a-7810e07fd57b",
+        hospital: " Monterey Park Hospital ",
+        hospital_cn: "蒙特利公园医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.montereyparkhosp.com/",
+        NICU_bed: "N/A",
+        address: "1509 Wilson Terrace Glendale, CA 91206",
+        description: "蒙特利公园医院，是一服务蒙特利公园地区的社区40年历史有101个床位的社区性质医院。拥有可以执业的华人医生，房为LDR Room，产后恢复为单人房，附设婴儿室无NICU，生产价格便宜。",
+        price: {
+            normal: "1250 USD",
+            csection: "2700 USD"
+        },
+        doctors: [
+            {
+                name: "Cindy Chou 周黄心滢",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "San Gabriel Valley Medical Center, \
+				Methodist Hospital of Southern California, \
+				Huntington Hospital, \
+				Monterey Park Hospital ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Doryth C Hong 洪淳",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "San Gabriel Valley Medical Center, \
+				Methodist Hospital of Southern California, \
+				Huntington Hospital, \
+				Monterey Park Hospital ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Shaun P.Grandy",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "San Gabriel Valley Medical Center, \
+				Methodist Hospital of Southern California, \
+				Huntington Hospital, \
+				Monterey Park Hospital ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			{
+                name: "John C Chiang 江昭璋",
+                price_normal: "1800 USD",
+                csection: "2500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Methodist Hospital Garfield Medical Center", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },			
+			 {
+                name: "Chen Fleming 陈芳铭 ",
+                price_normal: "2200 USD",
+                csection: "3200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Garfield Medical Center", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+           	{
+                name: "Jiunn-Bor Jason Hwang黄俊博  ",
+                price_normal: "2200 USD",
+                csection: "3200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Garfield Medical Center", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Pasadena",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Arcadia",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Ahambra",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "San Gabriel",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Temple City",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+			{
+                name: "Monterey Park ",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
             },
         ],
     },
