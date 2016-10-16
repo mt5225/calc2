@@ -1245,7 +1245,7 @@ export const mediacalData = [
         ],
     },
 	{
-        id: "edb1e8a1-a0c8-4bdc-805a-7810e07fd57b",
+        id: "1ba4ca17-7d64-43ce-8220-2b825d80bb40",
         hospital: " Monterey Park Hospital ",
         hospital_cn: "蒙特利公园医院",
         level: "一级",
