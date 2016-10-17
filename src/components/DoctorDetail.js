@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import Paper from 'material-ui/Paper'
-import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table'
+import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table'
 
 class DoctorDetail extends Component {
 
@@ -25,6 +25,10 @@ class DoctorDetail extends Component {
             doctor_detail = (
                 <Table style={styles.table}>
                     <TableBody displayRowCheckbox={false} stripedRows={true}>
+                        <TableRow>
+                            <TableRowColumn>医生</TableRowColumn>
+                            <TableRowColumn colSpan={3} style={styles.td}>{this.props.doctor.name}</TableRowColumn>
+                        </TableRow>
                         <TableRow>
                             <TableRowColumn>性别</TableRowColumn>
                             <TableRowColumn colSpan={3} style={styles.td}>{this.props.doctor.sex}</TableRowColumn>
