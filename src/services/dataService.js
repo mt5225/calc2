@@ -1433,7 +1433,7 @@ export const mediacalData = [
         ],
         cities: [
            {
-                name: "Newport Beac",
+                name: "Newport Beach",
                 room_2b1b: "5000 USD",
                 room_1b1b: "4500 USD"
             },
@@ -1479,9 +1479,9 @@ export const mediacalData = [
                 name: "姜礼明",
                 price_normal: "2800 USD",
                 csection: "3300 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                address: "N/A", 
                 tel: "(626) 576-1214", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Pomona Valley Hospital Medical Center ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1489,9 +1489,9 @@ export const mediacalData = [
                 name: "李端堂",
                 price_normal: "2500 USD",
                 csection: "3500 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                address: "N/A", 
                 tel: "(626) 576-1214", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Pomona Valley Hospital Medical Center ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1499,9 +1499,9 @@ export const mediacalData = [
                 name: "冯绍棠",
                 price_normal: "2300 USD",
                 csection: "2900 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                address: "N/A", 
                 tel: "(626) 576-1214", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Pomona Valley Hospital Medical Center ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1509,9 +1509,9 @@ export const mediacalData = [
                 name: "塔西拉",
                 price_normal: "3000 USD",
                 csection: "3000 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                address: "N/A", 
                 tel: "(626) 576-1214", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Pomona Valley Hospital Medical Center ", 
                 sex: "女", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1587,7 +1587,7 @@ export const mediacalData = [
                 csection: "2300 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "N/A", 
+                hospital: "Presbyterian Intercommunity Hospital", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1598,7 +1598,7 @@ export const mediacalData = [
                 csection: "2100 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "N/A", 
+                hospital: "Presbyterian Intercommunity Hospital", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1727,7 +1727,7 @@ export const mediacalData = [
                 csection: "4500 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1738,8 +1738,8 @@ export const mediacalData = [
                 csection: "2200 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
-                sex: "女", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center  ", 
+                sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
             },
@@ -1749,7 +1749,7 @@ export const mediacalData = [
                 csection: "2800 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center  ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1759,7 +1759,7 @@ export const mediacalData = [
                 csection: "4000 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center  ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1769,7 +1769,7 @@ export const mediacalData = [
                 csection: "3500 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center  ", 
                 sex: "男", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1779,7 +1779,7 @@ export const mediacalData = [
                 csection: "4500 USD",
                 address: "N/A", 
                 tel: "N/A", 
-                hospital: "Hoag Hospital Newport Beach ", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center  ", 
                 sex: "女", 
                 speak_cn: "是", 
                 has_cn_assistant: "是"
@@ -1787,7 +1787,280 @@ export const mediacalData = [
         ],
         cities: [
            {
-                name: "Newport Beac",
+                name: "Newport Beach",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Irvine",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+			{
+                name: "Laguna Beach",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Santa Ana",
+                room_2b1b: "4500 USD",
+                room_1b1b: "4000 USD"
+            },
+			{
+                name: "Fountain Valley",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+        ],
+    },
+	{
+        id: "fa47be25-7ed5-4bcd-a53b-88501e046fcd",
+        hospital: "Foothill Presbyterian Hospital",
+        hospital_cn: "山脚长老医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.cvhp.org",
+        NICU_bed: "N/A",
+        address: "250 S. Grand Ave., Glendora, CA 91741",
+        description: "山脚长老医院提供了一般的急性护理和专业服务是针对附近社区提供一般医疗服务的社区医院，值得一提的其拥有在圣贝纳迪诺和阿卡迪亚之间唯一经FAA批准的直升机场",
+        price: {
+            normal: "3345 USD",
+            csection: "6545 USD"
+        },
+        doctors: [            
+			{
+                name: "John C Chiang 江昭璋",
+                price_normal: "1800 USD",
+                csection: "2500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Methodist Hospital Garfield Medical Center,\Foothill Presbyterian Hospital", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },			
+			 {
+                name: "Chen Fleming 陈芳铭 ",
+                price_normal: "2200 USD",
+                csection: "3200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Garfield Medical Center,\Foothill Presbyterian Hospital", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+           	{
+                name: "李端松",
+                price_normal: "2400 USD",
+                csection: "2600 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Garfield Medical Center", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Glandora",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Arcadia",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: " San Dimas ",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "San Gabriel",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Azusa",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+			{
+                name: "La Verne",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+        ],
+    },
+	{
+        id: "5ed4d497-2987-4301-a784-1f4a57b04e53",
+        hospital: "Queen of the Valley Hospital ",
+        hospital_cn: "皇后谷医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.cvhp.org",
+        NICU_bed: "40",
+        address: "1115 S. Sunset Ave., West Covina, CA 91790",
+        description: "皇后谷医院成立于1962年位于西科维纳的，是一个非营利，天主教医疗保健医院，其拥有该地区最高级别的III级NICU 40个床位",
+        price: {
+            normal: "3345 USD",
+            csection: "6545 USD"
+        },
+        doctors: [            
+			{
+                name: "Bill Tang邓伟健",
+                price_normal: "2000 USD",
+                csection: "2500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Queen of the Valley Hospital", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },			
+			 {
+                name: "Yiu Fun Derek Lee 李耀宽  ",
+                price_normal: "2300 USD",
+                csection: "3100 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Queen of the Valley Hospital", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+           	
+        ],
+        cities: [
+		    {
+                name: "West Covina",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+           {
+                name: "Glandora",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Arcadia",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: " San Dimas ",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Walnut",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Azusa",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+			{
+                name: "La Verne",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+        ],
+    },
+	{
+        id: "8ea6833a-6cfd-4db6-95ff-bd29ef5caa73",
+        hospital: "Garden Grove Hospital and Medical Center",
+        hospital_cn: "园林医院",
+        level: "一级",
+        rating: "N/A",
+        high_risk_service: "N/A",
+        website: "www.gardengrovehospital.com",
+        NICU_bed: "N/A",
+        address: "12601 Garden Grove Blvd, Garden Grove, CA 92843",
+        description: "园林医院拥有167张床位，其定位是服务Garden Grove地区的社区医院，医院配备12间LDR产房，2间剖腹产手术室，还设立NICU",
+        price: {
+            normal: "2400 USD",
+            csection: "3600 USD"
+        },
+        doctors: [
+		    {
+                name: "刘隆德",
+                price_normal: "16500 USD",
+                csection: "2200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center,/Garden Grove Hospital and Medical Center  ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+            {
+                name: "王光明",
+                price_normal: "2800 USD",
+                csection: "3600 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Garden Grove Hospital and Medical Center ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "魏汝盼",
+                price_normal: "3300 USD",
+                csection: "4000 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center,/Garden Grove Hospital and Medical Center ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "苏宏达",
+                price_normal: "3000 USD",
+                csection: "3500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center,/Garden Grove Hospital and Medical Center ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "姚桂梅",
+                price_normal: "3500 USD",
+                csection: "4500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach,\Fountain Valley Regional Medical Center,/Garden Grove Hospital and Medical Center  ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Garden Grove",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Cerritos",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Anaheim",
+                room_2b1b: "4500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Newport Beach",
                 room_2b1b: "5000 USD",
                 room_1b1b: "4500 USD"
             },
