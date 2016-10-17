@@ -1142,6 +1142,11 @@ export const mediacalData = [
                 room_1b1b: "3000 USD"
             },
 			{
+                name: "Haciedna Heights",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
                 name: "Monterey Park",
                 room_2b1b: "3500 USD",
                 room_1b1b: "3000 USD"
@@ -1363,6 +1368,446 @@ export const mediacalData = [
             },
 			{
                 name: "Monterey Park ",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+        ],
+    },
+	{
+        id: "732201d0-b0fe-4151-a233-abb1e62bca17",
+        hospital: "Hoag Hospital Newport Beach",
+        hospital_cn: "霍格医院",
+        level: "三级",
+        rating: "66.8",
+        high_risk_service: "有",
+        website: "www.hoaghospital.org",
+        NICU_bed: "21",
+        address: "One Hoag Drive Newport Beach, CA ",
+        description: "霍格医院在USNEWS里最好成绩是大洛杉矶地区橘子郡地区的高端医院其中之一，海景病房是其特色。",
+        price: {
+            normal: "7500 USD",
+            csection: "10750 USD"
+        },
+        doctors: [
+            {
+                name: "杨子植",
+                price_normal: "2600 USD",
+                csection: "2800 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "魏汝盼",
+                price_normal: "3300 USD",
+                csection: "4000 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "苏宏达",
+                price_normal: "3000 USD",
+                csection: "3500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "姚桂梅",
+                price_normal: "3500 USD",
+                csection: "4500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Newport Beac",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Irvine",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+			{
+                name: "Laguna Beach",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Santa Ana",
+                room_2b1b: "4500 USD",
+                room_1b1b: "4000 USD"
+            },
+			{
+                name: "Fountain Valley",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+        ],
+    },
+	{
+        id: "1bb9e666-5ad4-461e-b537-ec7282fa29c7",
+        hospital: "Pomona Valley Hospital Medical Center",
+        hospital_cn: "波莫纳医疗中心",
+        level: "三级",
+        rating: "49.5",
+        high_risk_service: "有",
+        website: "www.pvhmc.org",
+        NICU_bed: "53",
+        address: "1798 N Garey Ave, Pomona, CA 91767 ",
+        description: "波莫纳医疗中心是安大略地区Pomona Vealley地区大型综合性医院，院内共计453个床位，如果不想选择低级别的社区医院波莫纳医疗中心是个备选医院。",
+        price: {
+            normal: "7500 USD",
+            csection: "10750 USD"
+        },
+        doctors: [
+            {
+                name: "姜礼明",
+                price_normal: "2800 USD",
+                csection: "3300 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "李端堂",
+                price_normal: "2500 USD",
+                csection: "3500 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "冯绍棠",
+                price_normal: "2300 USD",
+                csection: "2900 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "塔西拉",
+                price_normal: "3000 USD",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776", 
+                tel: "(626) 576-1214", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Nomona",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+            {
+                name: "Rowlan Heights",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+            {
+                name: " Walunt",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+			{
+                name: "Fontana",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Eastvale",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Montclair",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Chino",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Ontrario",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+			{
+                name: "Rancho Cucamonga",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+        ],
+    },
+	{
+        id: "747ad5b2-134a-4cf4-98e3-4f387d082788",
+        hospital: " Presbyterian Intercommunity Hospital ",
+        hospital_cn: "长老教会医院",
+        level: "三级",
+        rating: "57.3",
+        high_risk_service: "N/A",
+        website: "www.pihhealth.org",
+        NICU_bed: "N/A",
+        address: "12401 Washington Blvd, Whittier, CA 90602",
+        description: "与惠提尔医院同属一个医疗集团服务地区也是惠提尔周边几个城市，与惠提尔的区别是PIH是大型综合医院排名也远高于惠提尔医院，妇产科也配备LDR产房，待产·生产·复原三合一，提供单人间，有华语护士。",
+        price: {
+            normal: "7500 USD",
+            csection: "10750 USD"
+        },
+        doctors: [
+            {
+                name: "Hung-Chou Yen 颜鸿州",
+                price_normal: "3200 USD",
+                csection: "2300 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+                       {
+                name: "Jen-Kway Shen 沈仁贵",
+                price_normal: "2100 USD",
+                csection: "2100 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "N/A", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			
+        ],
+        cities: [
+            {
+                name: "Whittier",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+            {
+                name: "Rowlan Heights",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+            {
+                name: "West Covina",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Haciedna Heights",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Monterey Park",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+			{
+                name: "Fulleton",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+			{
+                name: "EI monte",
+                room_2b1b: "3000 USD",
+                room_1b1b: "2500 USD"
+            },
+        ],
+    },
+	{
+        id: "535d83d3-9615-4217-ba67-bec378de25ed",
+        hospital: "White Memorial Medical Center",
+        hospital_cn: "怀特纪念医疗中心（怀特医院）",
+        level: "二级",
+        rating: "56.1",
+        high_risk_service: "有",
+        website: "www.whitememorial.com",
+        NICU_bed: "28",
+        address: "1720 Cesar Chavez Avenue Los Angeles, CA 90033-2414",
+        description: "怀特纪念医疗中拥有353张床与GAMC格伦代尔台安医疗中心同属Adventis Health集团。 其产主要服务于Los Angeles 的市中心周边区域，产科评分中上水平拥有III级NICE 28个床位",
+        price: {
+            normal: "3300 USD",
+            csection: "3600 USD"
+        },
+        doctors: [
+            {
+                name: "Jiunn-Bor Jason Hwang黄俊博",
+                price_normal: "2200 USD",
+                csection: "3200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "White Memorial Medical Center", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },            
+        ],
+        cities: [
+            {
+                name: "Pasadena",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            }, 
+			{
+                name: "Beverly Hills",
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
+            },
+            {
+                name: "Glendale",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Arcadia",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Ahambra",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "San Gabriel",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+           
+        ],
+    },
+	{
+        id: "fea11434-cdba-4b4d-8535-3b479630f176",
+        hospital: "Fountain Valley Regional Medical Center",
+        hospital_cn: "芳泉谷医院",
+        level: "二级",
+        rating: "30.3",
+        high_risk_service: "N/A",
+        website: "www.fountainvalleyhospital.com",
+        NICU_bed: "23",
+        address: "17100 Euclid Street Fountain Valley, CA 92708-4043",
+        description: "芳泉谷医院内设有12间LDR病房拥有23个NICU III级床位，其妇产科评分比较低仅有30.3分，目前由于涉嫌过度医疗已被康源保险解除赔付关系，建议慎重考虑",
+        price: {
+            normal: "2600 USD",
+            csection: "4600 USD"
+        },
+        doctors: [
+		{
+                name: "罗素",
+                price_normal: "2800 USD",
+                csection: "4500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+			{
+                name: "刘隆德",
+                price_normal: "16500 USD",
+                csection: "2200 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+            {
+                name: "杨子植",
+                price_normal: "2600 USD",
+                csection: "2800 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "魏汝盼",
+                price_normal: "3300 USD",
+                csection: "4000 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "苏宏达",
+                price_normal: "3000 USD",
+                csection: "3500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "男", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },{
+                name: "姚桂梅",
+                price_normal: "3500 USD",
+                csection: "4500 USD",
+                address: "N/A", 
+                tel: "N/A", 
+                hospital: "Hoag Hospital Newport Beach ", 
+                sex: "女", 
+                speak_cn: "是", 
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+           {
+                name: "Newport Beac",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Irvine",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+			{
+                name: "Laguna Beach",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Santa Ana",
+                room_2b1b: "4500 USD",
+                room_1b1b: "4000 USD"
+            },
+			{
+                name: "Fountain Valley",
                 room_2b1b: "3500 USD",
                 room_1b1b: "3000 USD"
             },
