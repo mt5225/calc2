@@ -1519,7 +1519,7 @@ export const mediacalData = [
         ],
         cities: [
            {
-                name: "Nomona",
+                name: "Ponoma",
                 room_2b1b: "3500 USD",
                 room_1b1b: "3000 USD"
             },
