@@ -46,7 +46,7 @@ class House extends Component {
                 this.props.cityDetail.room_1b1b +
                 ' 每月， ' +
                 '两房一卫 ' +
-                this.props.cityDetail.room_1b1b +
+                this.props.cityDetail.room_2b1b +
                 ' 每月.'
         }
         return (
