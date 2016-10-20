@@ -26,10 +26,10 @@ class HospitalList extends Component {
                     onTouchTap={this.props.selectHospital.bind(this, item.hospital)}
                     leftAvatar={(<Avatar src={"images/" + item.id + ".png"} />)}
                     secondaryTextLines={2}
-                     secondaryText={
+                    secondaryText={
                     <p>
-                     <span style={{color: darkBlack}}>{item.hospital_cn}</span> --
-                     {item.description}
+                     <span style={{color: darkBlack}}>{item.hospital_cn}</span> &nbsp; 
+                     {item.rating === 'N/A' ? "没有评分不进入排名" : "产科综合评分:"  + item.rating}
                     </p>
                     }
                     />
