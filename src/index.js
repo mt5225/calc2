@@ -8,6 +8,10 @@ import { applyMiddleware, createStore } from 'redux'
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk'
 import calcApp from './reducers'
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux'
+import { Router, Route, browserHistory } from 'react-router'
+import HospitalList from './components/HospitalList'
+import NotFound from './components/NotFound'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 injectTapEventPlugin();
@@ -16,12 +20,18 @@ const logger = createLogger()
 
 const store = createStore(
   calcApp,
-  applyMiddleware(logger, thunk)
+  applyMiddleware(logger, thunk, routerMiddleware(browserHistory))
 )
+
+const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <Router history={history}>
+        <Route path="/steps" component={App} />
+        <Route path="/" component={HospitalList} />
+        <Route path="*" component={NotFound} />
+      </Router>
   </Provider>,
   document.getElementById('root')
 )

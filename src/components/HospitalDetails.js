@@ -27,6 +27,10 @@ class HospitalDetails extends Component {
                 <Table style={styles.table}>
                     <TableBody displayRowCheckbox={false} stripedRows={true}>
                         <TableRow>
+                            <TableRowColumn> 英文名</TableRowColumn>
+                            <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.hospital}</TableRowColumn>
+                        </TableRow>
+                        <TableRow>
                             <TableRowColumn> 中文名</TableRowColumn>
                             <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.hospital_cn}</TableRowColumn>
                         </TableRow>
@@ -43,12 +47,12 @@ class HospitalDetails extends Component {
                             <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.level}</TableRowColumn>
                         </TableRow>
                         <TableRow>
-                            <TableRowColumn> 评分</TableRowColumn>
-                            <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.rating}</TableRowColumn>
-                        </TableRow>
-                        <TableRow>
                             <TableRowColumn colSpan={3}>高风险孕妇服务</TableRowColumn>
                             <TableRowColumn colSpan={2} style={styles.td}>{this.props.detail.high_risk_service}</TableRowColumn>
+                        </TableRow>
+                        <TableRow>
+                            <TableRowColumn> 评分</TableRowColumn>
+                            <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.rating}</TableRowColumn>
                         </TableRow>
                         <TableRow>
                             <TableRowColumn>网址</TableRowColumn>

@@ -3,7 +3,7 @@ const initialState = {
     production_type: '',
     doctor_name: '',
     city: '',
-    stay_days: 60,
+    stay_days: 90,
     house_type: '',
     need_care: false,
     car_type: '',
@@ -62,6 +62,14 @@ const calcReducer = (state = initialState, action) => {
             )
         case 'A_RESET':
             return initialState
+
+        case 'A_HOSPITAL_ITEM_SELECT':
+             return Object.assign(
+                {},
+                state,
+                { hospital_name: action.payload.value }
+            )
+
         default:
             return state
     }

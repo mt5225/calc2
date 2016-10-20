@@ -3,6 +3,7 @@ const initialState = {
     step_0_hospital_price: 'hidden',
     step_1_doctor_desc: 'hidden',
     step_3_city_house_rent: 'hidden',
+    redirect: false,
 }
 
 const uiReducer = (state = initialState, action) => {
@@ -30,6 +31,12 @@ const uiReducer = (state = initialState, action) => {
                 {},
                 state,
                 { step_3_city_house_rent: 'show' }
+            )
+        case 'A_HOSPITAL_ITEM_SELECT':
+            return Object.assign(
+                {},
+                state,
+                { redirect: true }
             )
         case 'A_RESET':
             return initialState

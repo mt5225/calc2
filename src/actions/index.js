@@ -120,3 +120,10 @@ export const snackBarCloseAction = () => {
         type: 'A_SNACKBAR_CLOSE'
     }
 }
+
+export const hospitalItemSelectedAction = (payload) => {
+    return {
+        type: 'A_HOSPITAL_ITEM_SELECT',
+        payload
+    }
+}

@@ -11,6 +11,7 @@ import House from './House'
 import Car from './Car'
 import Result from './Result'
 import { nextActionVerify, prevAction,snackBarCloseAction } from '../actions'
+import { push } from 'react-router-redux'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -42,12 +43,19 @@ class VerticalLinearStepper extends React.Component {
         }
     }
 
+    componentWillMount(){
+        if(this.props.redirect === false){
+            console.log('redirct to hospital list')
+            this.props.dispatch(push('/'))
+        }
+    }
+
     render() {
         return (
             <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
                 <Stepper activeStep={this.props.stepIndex} orientation="vertical">
                     <Step>
-                        <StepLabel>选择医院与生产方式</StepLabel>
+                        <StepLabel>选择生产方式</StepLabel>
                         <StepContent>
                             <Hospital />
                             {this.renderStepActions(0)}
@@ -104,12 +112,14 @@ const mapStateToProps = (state) => {
     return {
         stepIndex: state.stepReducer.stepIndex,
         finished: state.stepReducer.finished,
-        snackBarState: state.validateReducer
+        snackBarState: state.validateReducer,
+        redirect: state.uiReducer.redirect,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        dispatch,
         nextAction: () => {
             dispatch(nextActionVerify())
         },

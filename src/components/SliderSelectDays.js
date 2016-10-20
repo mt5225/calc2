@@ -13,7 +13,7 @@ class SliderSelectDays extends Component {
                     min={30}
                     max={180}
                     step={1}
-                    defaultValue={60}
+                    defaultValue={90}
                     value={this.props.days}
                     onChange={this.props.daysQ}
                     />

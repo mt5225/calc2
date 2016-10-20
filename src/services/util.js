@@ -29,7 +29,7 @@ export function canGoNext(currentAnsware, currentStep) {
         case 0:
             if (currentAnsware.hospital_name.length < 1 || currentAnsware.production_type.length < 1) {
                 result = {
-                    message: '请先选择医院及生产方式',
+                    message: '请先选择生产方式',
                     status: false
                 }
             }
