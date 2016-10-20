@@ -11,42 +11,45 @@ import * as UTIL from '../services/util'
 class Result extends Component {
     render() {
         const title = "估计花销 " + this.props.price.total_price + " 人民币"
-        let medicalTitle = "医院与医生: "
+        let subtitle = "其中医院与医生开销 " + this.props.price.total_medical_price
+        subtitle += "人民币, 生活开销 " + this.props.price.total_living_price
+        subtitle += "人民币，汇率按6.8计算，具体如下:"
+        
         const product_type = this.props.choise.production_type === 'nature' ? "顺产24小时" : "剖腹产48小时"
-        const hospital_price = this.props.choise.production_type === 'nature' ?
+
+        //hospital price
+        const h_price = this.props.choise.production_type === 'nature' ?
             this.props.hospitalDetail.price['normal'] :
             this.props.hospitalDetail.price['csection']
-        const doctor_price = this.props.choise.production_type === 'nature' ?
+        let hospitalPrice = product_type + ", 报价 "
+        hospitalPrice += h_price
+
+        //doctor price
+        const d_price = this.props.choise.production_type === 'nature' ?
             this.props.doctorDetail['price_normal'] :
             this.props.doctorDetail['csection']
-        medicalTitle += product_type + "情况下,约"
-        medicalTitle += this.props.price.total_medical_price + "人民币"
+        let doctorPrice = product_type + ", 报价 "
+        doctorPrice += d_price
 
-        let medical = "医院" + this.props.choise.hospital_name
-        medical += " " + product_type
-        medical += "报价 " + hospital_price
-        medical += ", 医生" + this.props.choise.doctor_name
-        medical += " " + product_type
-        medical += "报价 " + doctor_price
-
-        let livingTitle = "食宿与交通: 逗留"
-        livingTitle += this.props.choise.stay_days
-        livingTitle += "天,约"
-        livingTitle += this.props.price.total_living_price
-        livingTitle += "人民币"
-        let living = "住" + this.props.choise.city + ", 房型为"
-        if (this.props.choise.house_type === '1b1b') { 
-            living += "一房一卫, 报价" + this.props.houseDetail['room_1b1b'] 
-        } else { 
-            living += "两房一卫, 报价" + this.props.houseDetail['room_2b1b'] 
-        }
-        living += ", "
-        if (this.props.choise.need_care) { living += "需要月嫂, 约6,000USD (含15%小费), " } else { living += "不需要月嫂," }
-        if (this.props.choise.car_type === 'uber') {
-            living += "交通方式为公交+uber, 约200USD每月"
+        //house price
+        let living = "住" + this.props.choise.stay_days
+        living += "天, "
+        if (this.props.choise.house_type === '1b1b') {
+            living += "一房一卫, " + this.props.houseDetail['room_1b1b']
         } else {
-            living += "交通方式为自己租车, 约1,500每月"
+            living += "两房一卫, " + this.props.houseDetail['room_2b1b']
         }
+        living += "每月, 房费总共"
+        living += this.props.price.total_living_price
+        living += "人民币"
+        
+        let other = ""
+        if (this.props.choise.car_type === 'uber') {
+            other += "公交+uber, 约200USD每月"
+        } else {
+            other += ",自己租车约1,500每月"
+        }
+        other += this.props.choise.need_care? " 月嫂6,000USD (含20%小费)": ""
 
         return (
             <div>
@@ -54,20 +57,30 @@ class Result extends Component {
                     <CardHeader
                         title={title}
                         titleStyle={{ fontSize: 'large' }}
-                        subtitle="具体如下"
+                        subtitle={subtitle}
                         actAsExpander={true}
                         showExpandableButton={true}
                         />
                     <CardText expandable={true} >
                         <List>
                             <ListItem
-                                primaryText={medicalTitle}
-                                secondaryText={medical}
+                                primaryText={"医院 " + this.props.choise.hospital_name}
+                                secondaryText={hospitalPrice}
                                 secondaryTextLines={2}
                                 />
                             <ListItem
-                                primaryText={livingTitle}
+                                primaryText={"医生 " + this.props.choise.doctor_name}
+                                secondaryText={doctorPrice}
+                                secondaryTextLines={2}
+                                />
+                            <ListItem
+                                primaryText={"住 " + this.props.choise.city}
                                 secondaryText={living}
+                                secondaryTextLines={2}
+                                />
+                            <ListItem
+                                primaryText={"其他"}
+                                secondaryText={other}
                                 secondaryTextLines={2}
                                 />
                         </List>
@@ -94,7 +107,7 @@ const mapStateToProps = (state) => {
             state.calcReducer.hospital_name),
             state.calcReducer.doctor_name),
         houseDetail: UTIL.getHouseDetailByHospitalAndHouseName(
-            state.calcReducer.hospital_name, 
+            state.calcReducer.hospital_name,
             state.calcReducer.city)
     }
 }
