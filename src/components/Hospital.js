@@ -54,7 +54,8 @@ const mapStateToProps = (state) => {
         production_type: state.calcReducer.production_type,
         hospitalDetail: hospitalDetail,
         hospitalDetailStyle: CONSTANTS.showElement,
-        PriceDetails: CONSTANTS.showElement,
+       PriceDetails: state.uiReducer.step_0_hospital_price === 'hidden' ?
+            CONSTANTS.hideElement : CONSTANTS.showElement,
         priceDetail: priceDetail,
     }
 }

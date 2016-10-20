@@ -4,13 +4,15 @@ import { Step, Stepper, StepLabel, StepContent } from 'material-ui/Stepper'
 import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import Snackbar from 'material-ui/Snackbar'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import ContentHome from 'material-ui/svg-icons/action/home'
 import Hospital from './Hospital'
 import Doctor from './Doctor'
 import SliderSelectDays from './SliderSelectDays'
 import House from './House'
 import Car from './Car'
 import Result from './Result'
-import { nextActionVerify, prevAction,snackBarCloseAction } from '../actions'
+import { nextActionVerify, prevAction, snackBarCloseAction, resetAction } from '../actions'
 import { push } from 'react-router-redux'
 
 class VerticalLinearStepper extends React.Component {
@@ -43,16 +45,26 @@ class VerticalLinearStepper extends React.Component {
         }
     }
 
-    componentWillMount(){
-        if(this.props.redirect === false){
+    componentWillMount() {
+        if (this.props.redirect === false) {
             console.log('redirct to hospital list')
             this.props.dispatch(push('/'))
         }
     }
 
     render() {
+        const style = {
+            marginRight: 20,
+            position: 'relative',
+            top: 16,
+            right: -320
+        };
         return (
             <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
+                <FloatingActionButton style={style} mini={true} onClick={this.props.homeAction}>
+                    <ContentHome />
+                </FloatingActionButton>
+
                 <Stepper activeStep={this.props.stepIndex} orientation="vertical">
                     <Step>
                         <StepLabel>选择生产方式</StepLabel>
@@ -128,7 +140,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         snackBarCloseAction: () => {
             dispatch(snackBarCloseAction())
-        }
+        },
+        homeAction: () => {
+            dispatch(resetAction())
+            dispatch(push('/'))
+        },
     }
 }
 

@@ -20,6 +20,28 @@ export function getDoctorListByHospitalName(hospital_name) {
     return doctorList
 }
 
+export function getDoctorFromListByName(doctorList, name) {
+    let doctor = null
+    for(var index = 0; index < doctorList.length; index++) {
+        if(doctorList[index].name === name) {
+
+            doctor = doctorList[index]
+        }
+    }
+    return doctor
+}
+
+export function getHouseDetailByHospitalAndHouseName (hospital_name, house_name) {
+    let hospitalDetail = getHospitalDetailByName(hospital_name)
+    let houseDetail = null
+    for (var index = 0; index < hospitalDetail.cities.length; index++) {
+        if ( hospitalDetail.cities[index].name === house_name) {
+            houseDetail = hospitalDetail.cities[index]
+        }
+    }
+    return houseDetail
+}
+
 export function canGoNext(currentAnsware, currentStep) {
     let result = {
         message: '',
