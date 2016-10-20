@@ -32,16 +32,14 @@ class Result extends Component {
         doctorPrice += d_price
 
         //house price
-        let living = "住" + this.props.choise.stay_days
-        living += "天, "
+        let living = "" 
         if (this.props.choise.house_type === '1b1b') {
-            living += "一房一卫, " + this.props.houseDetail['room_1b1b']
+            living += "一房一卫, 报价 " + this.props.houseDetail['room_1b1b']
         } else {
-            living += "两房一卫, " + this.props.houseDetail['room_2b1b']
+            living += "两房一卫, 报价 " + this.props.houseDetail['room_2b1b']
         }
-        living += "每月, 房费总共"
-        living += this.props.price.total_living_price
-        living += "人民币"
+        living += " 每月, 共住" + this.props.choise.stay_days
+        living += "天"
         
         let other = ""
         if (this.props.choise.car_type === 'uber') {
@@ -66,17 +64,17 @@ class Result extends Component {
                             <ListItem
                                 primaryText={"医院 " + this.props.choise.hospital_name}
                                 secondaryText={hospitalPrice}
-                                secondaryTextLines={2}
+                                secondaryTextLines={1}
                                 />
                             <ListItem
                                 primaryText={"医生 " + this.props.choise.doctor_name}
                                 secondaryText={doctorPrice}
-                                secondaryTextLines={2}
+                                secondaryTextLines={1}
                                 />
                             <ListItem
                                 primaryText={"住 " + this.props.choise.city}
                                 secondaryText={living}
-                                secondaryTextLines={2}
+                                secondaryTextLines={1}
                                 />
                             <ListItem
                                 primaryText={"其他"}
