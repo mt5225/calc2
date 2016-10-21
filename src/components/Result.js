@@ -14,7 +14,7 @@ class Result extends Component {
         let subtitle = "其中医院与医生开销 " + this.props.price.total_medical_price
         subtitle += "人民币, 生活开销 " + this.props.price.total_living_price
         subtitle += "人民币，汇率按6.8计算，具体如下:"
-        
+
         const product_type = this.props.choise.production_type === 'nature' ? "顺产24小时" : "剖腹产48小时"
 
         //hospital price
@@ -32,7 +32,7 @@ class Result extends Component {
         doctorPrice += d_price
 
         //house price
-        let living = "" 
+        let living = ""
         if (this.props.choise.house_type === '1b1b') {
             living += "一房一卫, 报价 " + this.props.houseDetail['room_1b1b']
         } else {
@@ -40,14 +40,14 @@ class Result extends Component {
         }
         living += " 每月, 共住" + this.props.choise.stay_days
         living += "天"
-        
+
         let other = ""
         if (this.props.choise.car_type === 'uber') {
             other += "公交+uber, 约200USD每月"
         } else {
             other += ",自己租车约1,500每月"
         }
-        other += this.props.choise.need_care? " 月嫂6,000USD (含20%小费)": ""
+        other += this.props.choise.need_care ? " 月嫂6,000USD (含20%小费)" : ""
 
         return (
             <div>
@@ -77,8 +77,16 @@ class Result extends Component {
                                 secondaryTextLines={1}
                                 />
                             <ListItem
+                                secondaryText={"注：租金是根据洛杉矶本地全家具服务式公寓，包水电气及上网费用进行估算，仅供参考。"}
+                                secondaryTextLines={2}
+                                />
+                            <ListItem
                                 primaryText={"其他"}
                                 secondaryText={other}
+                                secondaryTextLines={2}
+                                />
+                            <ListItem                    
+                                secondaryText={"注：交通费用是根据一家人超市购物，产检等必要需求估算，租车费用根据常规租车公司带保险价格估算，仅供参考。"}
                                 secondaryTextLines={2}
                                 />
                         </List>
