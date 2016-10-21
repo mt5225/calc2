@@ -4,71 +4,6 @@ export const USD_RATE = 6.8
 
 export const mediacalData = [
     {
-        id: "fa1c7a56-6e97-48df-8fac-cce0544af7ed",
-        hospital: "Ronald Reagan UCLA Medical Center",
-        hospital_cn: "罗纳德里根加州大学洛杉矶分校医疗中心",
-        order: 1,
-        level: "三级",
-        rating: "78.6",
-        high_risk_service: "有",
-        website: "www.uclahealth.org",
-        NICU_bed: "17",
-        address: "757 Westwood Plaza, Los Angeles, CA 90095",
-        description: "罗纳德里根加州大学洛杉矶分校医疗中心(UCLA Healty)，为洛杉矶大都会最好的医院。该医院单独设立国际患者协调中心，会有国际患者协调专员(international@mednet.ucla.edu) 为中国患者提供入院服务。",
-        price: {
-            normal: "16000 USD",
-            csection: "29000 USD"
-        },
-        doctors: [
-            {
-                name: "Andrea Rapkin",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "N/A",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Angela Chen",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "N/A",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-
-            {
-                name: "Robin Rarias-Eisner",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "N/A",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-        ],
-        cities: [
-            {
-                name: "Beverly Hills",
-                room_2b1b: "5500 USD",
-                room_1b1b: "5000 USD"
-            },
-            {
-                name: "San Monica",
-                room_2b1b: "5500 USD",
-                room_1b1b: "5000 USD"
-            }
-        ],
-    },
-    {
         id: "30bd68a8-c55e-4f5c-8914-905a756a97f7",
         hospital: "Cedars-Sinai Medical Center",
         hospital_cn: "雪松西奈山医疗中心",
@@ -144,6 +79,72 @@ export const mediacalData = [
             }
         ],
     },
+    {
+        id: "fa1c7a56-6e97-48df-8fac-cce0544af7ed",
+        hospital: "Ronald Reagan UCLA Medical Center",
+        hospital_cn: "罗纳德里根加州大学洛杉矶分校医疗中心",
+        order: 1,
+        level: "三级",
+        rating: "78.6",
+        high_risk_service: "有",
+        website: "www.uclahealth.org",
+        NICU_bed: "17",
+        address: "757 Westwood Plaza, Los Angeles, CA 90095",
+        description: "罗纳德里根加州大学洛杉矶分校医疗中心(UCLA Healty)，为洛杉矶大都会最好的医院。该医院单独设立国际患者协调中心，会有国际患者协调专员(international@mednet.ucla.edu) 为中国患者提供入院服务。",
+        price: {
+            normal: "16000 USD",
+            csection: "29000 USD"
+        },
+        doctors: [
+            {
+                name: "Andrea Rapkin",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "N/A",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Angela Chen",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "N/A",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+
+            {
+                name: "Robin Rarias-Eisner",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "N/A",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+            {
+                name: "Beverly Hills",
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
+            },
+            {
+                name: "San Monica",
+                room_2b1b: "5500 USD",
+                room_1b1b: "5000 USD"
+            }
+        ],
+    },
+
     {
         id: "0ae7d4a2-68b2-4c4d-bcbd-3fbeaa2d90b0",
         hospital: "Huntington Memorial Hospital",
