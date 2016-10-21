@@ -13,7 +13,7 @@ class HospitalList extends Component {
     componentDidUpdate(){
         if(this.props.redirect === true){
             console.log('redirct to steps')
-            this.props.dispatch(push('/steps'))
+            this.props.dispatch(push('/calc2/steps'))
         }
     }
     render() {

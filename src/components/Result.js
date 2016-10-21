@@ -45,7 +45,7 @@ class Result extends Component {
         if (this.props.choise.car_type === 'uber') {
             other += "公交+uber, 约200USD每月"
         } else {
-            other += ",自己租车约1,500每月"
+            other += "自己租车约1,500每月"
         }
         other += this.props.choise.need_care ? " 月嫂6,000USD (含20%小费)" : ""
 
@@ -122,7 +122,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         resetAction: () => {
             dispatch(resetAction())
-            dispatch(push('/'))
+            dispatch(push('/calc2'))
         },
     }
 }

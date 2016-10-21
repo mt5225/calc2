@@ -143,7 +143,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         homeAction: () => {
             dispatch(resetAction())
-            dispatch(push('/'))
+            dispatch(push('/calc2'))
         },
     }
 }
