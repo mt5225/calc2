@@ -77,7 +77,7 @@ class Result extends Component {
                                 secondaryTextLines={1}
                                 />
                             <ListItem
-                                secondaryText={"注：租金是根据洛杉矶本地全家具服务式公寓，包水电气及上网费用进行估算，仅供参考。"}
+                                secondaryText={"注：租金是根据洛杉矶本地全家具服务式公寓，包水电气及上网费用估算，仅供参考。"}
                                 secondaryTextLines={2}
                                 />
                             <ListItem
@@ -86,7 +86,7 @@ class Result extends Component {
                                 secondaryTextLines={2}
                                 />
                             <ListItem                    
-                                secondaryText={"注：交通费用是根据一家人超市购物，产检等必要需求估算，租车费用根据常规租车公司带保险价格估算，仅供参考。"}
+                                secondaryText={this.props.choise.car_type === 'uber' ? "注：交通费用(公交 + uber)是根据超市购物，产检等必要需求估算, 仅供参考。" : "注：自己租车的费用根据常规租车公司带保险价格估算, 仅供参考。"}
                                 secondaryTextLines={2}
                                 />
                         </List>

@@ -428,12 +428,12 @@ export const mediacalData = [
         },
         doctors: [
             {
-                name: "Shirley M Cahng ",
+                name: "Shirley M Chan 陈美庄",
                 price_normal: "3000 USD",
                 csection: "4000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "N/A",
+                address: "1505 Wilson Terrace, #350, Glendale, CA 91206",
+                tel: "818-243-8431",
+                hospital: "Glendale Adventist Medical Center",
                 sex: "女",
                 speak_cn: "是",
                 has_cn_assistant: "是"
@@ -442,9 +442,9 @@ export const mediacalData = [
                 name: "Ronald Seng Peng Wu ",
                 price_normal: "3000 USD",
                 csection: "4000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "N/A",
+                address: "1505 Wilson Terrace, #350, Glendale, CA 91206",
+                tel: "818-243-8431",
+                hospital: "Glendale Adventist Medical Center",
                 sex: "男",
                 speak_cn: "是",
                 has_cn_assistant: "是"
@@ -456,8 +456,8 @@ export const mediacalData = [
                 csection: "3000 USD",
                 address: "N/A",
                 tel: "N/A",
-                hospital: "N/A",
-                sex: "男",
+                hospital: "Glendale Adventist Medical Center",
+                sex: "女",
                 speak_cn: "是",
                 has_cn_assistant: "是"
             },
@@ -488,206 +488,6 @@ export const mediacalData = [
                 name: "Glendale",
                 room_2b1b: "5000 USD",
                 room_1b1b: "4500 USD"
-            },
-        ],
-    },
-    {
-        id: "3341737e-760b-4d4b-b0cb-02eddb3c2527",
-        hospital: "Methodist Hospital",
-        hospital_cn: "美以美医院",
-        order: 6,
-        level: "二级",
-        rating: "59.7",
-        high_risk_service: "无",
-        website: "www.methodisthospital.org",
-        NICU_bed: "17",
-        address: "300 W Huntington Dr, Arcadia, CA 91007",
-        description: "中国医院等级：二级医院 产科综合评分：46.1/100 (不进入排名) NICU等级：二级 (17个床位) 非盈利性医院，华人比例高，单间多",
-        price: {
-            normal: "4800 USD",
-            csection: "6800 USD"
-        },
-        doctors: [
-            {
-                name: "Cindy Chou 周黄心滢",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
-                tel: "(626) 576-1214",
-                hospital: "San Gabriel Valley Medical Center \
-				Methodist Hospital of Southern California \
-				Huntington Hospital \
-				Monterey Park Hospital ",
-                sex: "女",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Doryth C Hong 洪淳",
-                csection: "3000 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
-                tel: "(626) 576-1214",
-                hospital: "San Gabriel Valley Medical Center \
-				Methodist Hospital of Southern California \
-				Huntington Hospital \
-				Monterey Park Hospital ",
-                sex: "女",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Shaun P.Grandy",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
-                tel: "(626) 576-1214",
-                hospital: "San Gabriel Valley Medical Center \
-				Methodist Hospital of Southern California \
-				Huntington Hospital \
-				Monterey Park Hospital ",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "John C Chiang 江昭璋",
-                price_normal: "1800 USD",
-                csection: "2500 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "San Gabriel Valley Medical Center \
-				Methodist Hospital of Southern California \
-				Huntington Hospital \
-				Monterey Park Hospital",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Andrew Yeh 叶尹之",
-                price_normal: "2500 USD",
-                csection: "2800 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Chen Eric 陈绍平 ",
-                price_normal: "1600 USD",
-                csection: "1800 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-
-            {
-                name: "Kuan-I Wang 王冠一 ",
-                price_normal: "2200 USD",
-                csection: "2800 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Kuan-I Wang 王冠一 ",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "Kee Koh 许机生 ",
-                price_normal: "N/A USD",
-                csection: "N/A USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "王乔治（王海） ",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "陈嘉琳 ",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-            {
-                name: "王均野 ",
-                price_normal: "2500 USD",
-                csection: "3000 USD",
-                address: "N/A",
-                tel: "N/A",
-                hospital: "Methodist Hospital Garfield Medical Center",
-                sex: "男",
-                speak_cn: "是",
-                has_cn_assistant: "是"
-            },
-        ],
-        cities: [
-            {
-                name: "Pasadena",
-                room_2b1b: "5000 USD",
-                room_1b1b: "4500 USD"
-            },
-            {
-                name: "Glendale",
-                room_2b1b: "5000 USD",
-                room_1b1b: "4500 USD"
-            },
-            {
-                name: "Arcadia",
-                room_2b1b: "5000 USD",
-                room_1b1b: "4500 USD"
-            },
-            {
-                name: "Ahambra",
-                room_2b1b: "4000 USD",
-                room_1b1b: "3500 USD"
-            },
-            {
-                name: "San Gabriel",
-                room_2b1b: "4000 USD",
-                room_1b1b: "3500 USD"
-            },
-            {
-                name: "Temple City",
-                room_2b1b: "4000 USD",
-                room_1b1b: "3500 USD"
-            },
-            {
-                name: "Monterey Park ",
-                room_2b1b: "3500 USD",
-                room_1b1b: "3000 USD"
             },
         ],
     },
@@ -896,6 +696,206 @@ export const mediacalData = [
                 address: "N/A",
                 tel: "N/A",
                 hospital: "Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+        ],
+        cities: [
+            {
+                name: "Pasadena",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Glendale",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Arcadia",
+                room_2b1b: "5000 USD",
+                room_1b1b: "4500 USD"
+            },
+            {
+                name: "Ahambra",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "San Gabriel",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Temple City",
+                room_2b1b: "4000 USD",
+                room_1b1b: "3500 USD"
+            },
+            {
+                name: "Monterey Park ",
+                room_2b1b: "3500 USD",
+                room_1b1b: "3000 USD"
+            },
+        ],
+    },
+    {
+        id: "3341737e-760b-4d4b-b0cb-02eddb3c2527",
+        hospital: "Methodist Hospital",
+        hospital_cn: "美以美医院",
+        order: 6,
+        level: "二级",
+        rating: "59.7",
+        high_risk_service: "无",
+        website: "www.methodisthospital.org",
+        NICU_bed: "17",
+        address: "300 W Huntington Dr, Arcadia, CA 91007",
+        description: "中国医院等级：二级医院 产科综合评分：46.1/100 (不进入排名) NICU等级：二级 (17个床位) 非盈利性医院，华人比例高，单间多",
+        price: {
+            normal: "4800 USD",
+            csection: "6800 USD"
+        },
+        doctors: [
+            {
+                name: "Cindy Chou 周黄心滢",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
+                tel: "(626) 576-1214",
+                hospital: "San Gabriel Valley Medical Center \
+				Methodist Hospital of Southern California \
+				Huntington Hospital \
+				Monterey Park Hospital ",
+                sex: "女",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Doryth C Hong 洪淳",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
+                tel: "(626) 576-1214",
+                hospital: "San Gabriel Valley Medical Center \
+				Methodist Hospital of Southern California \
+				Huntington Hospital \
+				Monterey Park Hospital ",
+                sex: "女",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Shaun P.Grandy",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "207 S Santa Anita Ave Ste 335 San Gabriel, CA 91776",
+                tel: "(626) 576-1214",
+                hospital: "San Gabriel Valley Medical Center \
+				Methodist Hospital of Southern California \
+				Huntington Hospital \
+				Monterey Park Hospital ",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "John C Chiang 江昭璋",
+                price_normal: "1800 USD",
+                csection: "2500 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "San Gabriel Valley Medical Center \
+				Methodist Hospital of Southern California \
+				Huntington Hospital \
+				Monterey Park Hospital",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Andrew Yeh 叶尹之",
+                price_normal: "2500 USD",
+                csection: "2800 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Chen Eric 陈绍平 ",
+                price_normal: "1600 USD",
+                csection: "1800 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+
+            {
+                name: "Kuan-I Wang 王冠一 ",
+                price_normal: "2200 USD",
+                csection: "2800 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Kuan-I Wang 王冠一 ",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "Kee Koh 许机生 ",
+                price_normal: "N/A USD",
+                csection: "N/A USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "王乔治（王海） ",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "陈嘉琳 ",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
+                sex: "男",
+                speak_cn: "是",
+                has_cn_assistant: "是"
+            },
+            {
+                name: "王均野 ",
+                price_normal: "2500 USD",
+                csection: "3000 USD",
+                address: "N/A",
+                tel: "N/A",
+                hospital: "Methodist Hospital Garfield Medical Center",
                 sex: "男",
                 speak_cn: "是",
                 has_cn_assistant: "是"

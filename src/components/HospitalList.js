@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { List, ListItem } from 'material-ui/List'
-import Subheader from 'material-ui/Subheader'
 import Avatar from 'material-ui/Avatar'
 import { darkBlack } from 'material-ui/styles/colors'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -10,13 +9,18 @@ import { hospitalItemSelectedAction } from '../actions'
 import { push } from 'react-router-redux'
 
 class HospitalList extends Component {
-    componentDidUpdate(){
-        if(this.props.redirect === true){
+    componentDidUpdate() {
+        if (this.props.redirect === true) {
             console.log('redirct to steps')
             this.props.dispatch(push('/calc2/steps'))
         }
     }
     render() {
+        const styles = {
+            title: {
+                textAlign: 'center'
+            }
+        }
         const listItem = mediacalData.map(
             (item) => {
                 return (<ListItem
@@ -27,10 +31,10 @@ class HospitalList extends Component {
                     leftAvatar={(<Avatar src={"images/" + item.id + ".png"} />)}
                     secondaryTextLines={2}
                     secondaryText={
-                    <p>
-                     <span style={{color: darkBlack}}>{item.hospital_cn}</span> &nbsp; 
-                     {item.rating === 'N/A' ? "没有评分不进入排名" : "产科综合评分:"  + item.rating}
-                    </p>
+                        <p>
+                            <span style={{ color: darkBlack }}>{item.hospital_cn}</span> &nbsp;
+                     {item.rating === 'N/A' ? "没有评分不进入排名" : "产科综合评分:" + item.rating}
+                        </p>
                     }
                     />
                 )
@@ -38,24 +42,24 @@ class HospitalList extends Component {
         )
         return (
             <MuiThemeProvider>
-            <div>
-                <List>
-                    <Subheader>按洛杉矶产科综合评分排序</Subheader>
-                     {listItem}
-                </List>
-            </div>
+                <div>
+                    <h3 style={styles.title}>赴美生子 - 洛杉矶医院排名</h3>
+                    <List>
+                        {listItem}
+                    </List>
+                </div>
             </MuiThemeProvider>
         )
     }
 }
 
-const mapStateToProps = (state) => { 
+const mapStateToProps = (state) => {
     return {
         redirect: state.uiReducer.redirect
     }
 }
 
-const mapDispatchToProps = (dispatch) => { 
+const mapDispatchToProps = (dispatch) => {
     return {
         dispatch,
         selectHospital: (name) => {

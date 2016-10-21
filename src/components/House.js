@@ -92,11 +92,11 @@ class House extends Component {
                         label="需要"
                         value="yes"
                         style={styles.checkbox}
+                        checked={this.props.need_care}
                         onCheck={this.props.careQ}
                         />
                 </div>
             </div>
-
         );
     }
 }
