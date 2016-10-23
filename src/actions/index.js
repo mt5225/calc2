@@ -1,4 +1,5 @@
 import * as UTIL from '../services/util'
+import { push } from 'react-router-redux'
 
 export const hospitalAction = (payload) => {
     return {
@@ -121,9 +122,16 @@ export const snackBarCloseAction = () => {
     }
 }
 
-export const hospitalItemSelectedAction = (payload) => {
+export const setHospitalAction = (payload) => {
     return {
         type: 'A_HOSPITAL_ITEM_SELECT',
         payload
+    }
+}
+
+export const hospitalItemSelectedAction = (payload) => {
+    return (dispatch, getState) => {
+        dispatch(setHospitalAction(payload))
+        dispatch(push('/steps'))
     }
 }

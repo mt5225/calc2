@@ -6,15 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { mediacalData } from '../services/dataService'
 import { connect } from 'react-redux'
 import { hospitalItemSelectedAction } from '../actions'
-import { push } from 'react-router-redux'
 
 class HospitalList extends Component {
-    componentDidUpdate() {
-        if (this.props.redirect === true) {
-            console.log('redirct to steps')
-            this.props.dispatch(push('/calc2/steps'))
-        }
-    }
     render() {
         const styles = {
             title: {
