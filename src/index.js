@@ -30,6 +30,7 @@ ReactDOM.render(
       <Router history={history}>
         <Route path="/steps" component={App} />
         <Route path="/" component={HospitalList} />
+        <Route path="/calc2" component={HospitalList} />
         <Route path="*" component={NotFound} />
       </Router>
   </Provider>,

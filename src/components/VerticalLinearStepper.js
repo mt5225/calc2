@@ -52,6 +52,10 @@ class VerticalLinearStepper extends React.Component {
         }
     }
 
+    componentDidMount() {
+        window.onpopstate = this.props.onBackButtonEvent
+    }
+
     render() {
         const style = {
             marginRight: 20,
@@ -145,6 +149,12 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(resetAction())
             dispatch(push('/'))
         },
+        onBackButtonEvent: (e) => {
+            console.log('handling back button press')
+            e.preventDefault()
+            dispatch(resetAction())
+            dispatch(push('/'))
+        }
     }
 }
 
