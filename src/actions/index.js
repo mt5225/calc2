@@ -1,4 +1,5 @@
 import * as UTIL from '../services/util'
+import * as api from '../services/api'
 import { push } from 'react-router-redux'
 
 export const hospitalAction = (payload) => {
@@ -133,5 +134,54 @@ export const hospitalItemSelectedAction = (payload) => {
     return (dispatch, getState) => {
         dispatch(setHospitalAction(payload))
         dispatch(push('/steps'))
+    }
+}
+
+/**
+ * api status
+ */
+export const fetchRecordRequestSent = (msg) => {
+    return {
+        type: 'E_REQ_SENT',
+        value: msg,
+    }
+}
+
+export const fetchRecordFailed = (statusText) => {
+    return {
+        type: 'E_REQ_FAILED',
+        value: statusText,
+    }
+}
+
+export const fetchRecordSuccess = (data) => {
+    return {
+        type: 'E_REQ_SUCCESS',
+        payload: data,
+    }
+}
+
+/**
+ * fetch hospital records
+ */
+export const fetchHospitalRecordAction = () => {
+    return (dispatch, getState) => {
+        dispatch(fetchRecordRequestSent('fetch hospital record'))
+        api.fetchHospitalRecord()
+            .then(response => {
+                if (response.status !== 200) {
+                    dispatch(fetchRecordFailed(response.statusText))
+                } else {
+                    return response.json()
+                        .then(result => {
+                            dispatch(fetchRecordSuccess(result))
+                        })
+                        .catch(e => {
+                            console.log(e)
+                        })
+                }
+            }).catch(e => {
+                console.log(e);
+            })
     }
 }

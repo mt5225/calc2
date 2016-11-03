@@ -85,7 +85,7 @@ class Result extends Component {
                                 secondaryText={other}
                                 secondaryTextLines={2}
                                 />
-                            <ListItem                    
+                            <ListItem
                                 secondaryText={this.props.choise.car_type === 'uber' ? "注：交通费用(公交 + uber)是根据超市购物，产检等必要需求估算, 仅供参考。" : "注：自己租车的费用根据常规租车公司带保险价格估算, 仅供参考。"}
                                 secondaryTextLines={2}
                                 />
@@ -105,16 +105,18 @@ class Result extends Component {
 }
 
 const mapStateToProps = (state) => {
+    const records = state.dataReducer.records
     return {
         choise: state.calcReducer,
-        price: calcPrice(state.calcReducer),
-        hospitalDetail: UTIL.getHospitalDetailByName(state.calcReducer.hospital_name),
-        doctorDetail: UTIL.getDoctorFromListByName(UTIL.getDoctorListByHospitalName(
-            state.calcReducer.hospital_name),
+        price: calcPrice(state.calcReducer, records),
+        hospitalDetail: UTIL.getHospitalDetailByName(state.calcReducer.hospital_name,
+            records),
+        doctorDetail: UTIL.getDoctorFromListByName(
+            UTIL.getDoctorListByHospitalName(state.calcReducer.hospital_name, records),
             state.calcReducer.doctor_name),
         houseDetail: UTIL.getHouseDetailByHospitalAndHouseName(
             state.calcReducer.hospital_name,
-            state.calcReducer.city)
+            state.calcReducer.city, records)
     }
 }
 

@@ -4,14 +4,14 @@ function usd2rmb(originStr, orginPrice) {
     return /USD$/.test(originStr) ? orginPrice * Data.USD_RATE : orginPrice
 }
 
-function calcPrice(state) {
+function calcPrice(state, records) {
     let total = 0
     let hospital = {}
     const re = /^\d+/
     //1. find hospital
-    for (var index = 0; index < Data.mediacalData.length; index++) {
-        if (Data.mediacalData[index].hospital === state.hospital_name) {
-            hospital = Data.mediacalData[index]
+    for (var index = 0; index < records.length; index++) {
+        if (records[index].hospital === state.hospital_name) {
+            hospital = records[index]
         }
     }
     console.log(hospital)

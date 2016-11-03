@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import { doctorAction } from '../actions'
@@ -32,7 +32,7 @@ class Doctor extends Component {
 
         return (
             <div>
-                <br/>
+                <br />
                 <RadioButtonGroup
                     name="doctorName"
                     defaultSelected={this.props.doctorSelected}
@@ -49,7 +49,8 @@ class Doctor extends Component {
 }
 
 const mapStateToProps = (state) => {
-    let doctorlist = UTIL.getDoctorListByHospitalName(state.calcReducer.hospital_name)
+    let doctorlist = UTIL.getDoctorListByHospitalName(state.calcReducer.hospital_name,
+        state.dataReducer.records)
     let doctor = null
 
     for (let index = 0; index < doctorlist.length; index++) {

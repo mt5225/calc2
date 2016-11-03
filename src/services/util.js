@@ -1,20 +1,22 @@
-import * as Data from './dataService'
+/**
+ * utils for find record
+ */
 
-export function getHospitalDetailByName(hospital_name) {
+export function getHospitalDetailByName(hospital_name, records) {
     let hospitalDetail = null
-    for (var index = 0; index < Data.mediacalData.length; index++) {
-        if (Data.mediacalData[index].hospital === hospital_name) {
-            hospitalDetail = Data.mediacalData[index]
+    for (var index = 0; index < records.length; index++) {
+        if (records[index].hospital === hospital_name) {
+            hospitalDetail = records[index]
         }
     }
     return hospitalDetail
 }
 
-export function getDoctorListByHospitalName(hospital_name) {
+export function getDoctorListByHospitalName(hospital_name, records) {
     let doctorList = null
-    for (var index = 0; index < Data.mediacalData.length; index++) {
-        if (Data.mediacalData[index].hospital === hospital_name) {
-            doctorList = Data.mediacalData[index].doctors
+    for (var index = 0; index < records.length; index++) {
+        if (records[index].hospital === hospital_name) {
+            doctorList = records[index].doctors
         }
     }
     return doctorList
@@ -24,15 +26,14 @@ export function getDoctorFromListByName(doctorList, name) {
     let doctor = null
     for(var index = 0; index < doctorList.length; index++) {
         if(doctorList[index].name === name) {
-
             doctor = doctorList[index]
         }
     }
     return doctor
 }
 
-export function getHouseDetailByHospitalAndHouseName (hospital_name, house_name) {
-    let hospitalDetail = getHospitalDetailByName(hospital_name)
+export function getHouseDetailByHospitalAndHouseName (hospital_name, house_name, records) {
+    let hospitalDetail = getHospitalDetailByName(hospital_name, records)
     let houseDetail = null
     for (var index = 0; index < hospitalDetail.cities.length; index++) {
         if ( hospitalDetail.cities[index].name === house_name) {

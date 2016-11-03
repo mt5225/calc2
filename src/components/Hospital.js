@@ -34,14 +34,14 @@ class Hospital extends Component {
                         style={styles.radioButton}
                         />
                 </RadioButtonGroup>
-                <GenericDetails style={this.props.PriceDetails} content={this.props.priceDetail}/>
+                <GenericDetails style={this.props.priceDetailsStyle} content={this.props.priceDetail}/>
             </div >
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    let hospitalDetail = UTIL.getHospitalDetailByName(state.calcReducer.hospital_name)
+    let hospitalDetail = UTIL.getHospitalDetailByName(state.calcReducer.hospital_name, state.dataReducer.records)
     let priceDetail = '医院报价：'
     if (hospitalDetail) {
         if (state.calcReducer.production_type.length > 0) {
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
         production_type: state.calcReducer.production_type,
         hospitalDetail: hospitalDetail,
         hospitalDetailStyle: CONSTANTS.showElement,
-       PriceDetails: state.uiReducer.step_0_hospital_price === 'hidden' ?
+        priceDetailsStyle: state.uiReducer.step_0_hospital_price === 'hidden' ?
             CONSTANTS.hideElement : CONSTANTS.showElement,
         priceDetail: priceDetail,
     }

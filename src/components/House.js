@@ -4,7 +4,6 @@ import Divider from 'material-ui/Divider'
 import Checkbox from 'material-ui/Checkbox'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Subheader from 'material-ui/Subheader'
-import { mediacalData } from '../services/dataService'
 import { houseAction, careAction, cityAction } from '../actions'
 import GenericDetails from './GenericDetails'
 import * as CONSTANTS from '../services/constants'
@@ -103,6 +102,7 @@ class House extends Component {
 
 const mapStateToProps = (state) => {
     let cities = []
+    const mediacalData = state.dataReducer.records
     for (let index = 0; index < mediacalData.length; index++) {
         if (mediacalData[index].hospital === state.calcReducer.hospital_name) {
             cities = mediacalData[index].cities
