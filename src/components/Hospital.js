@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
 import HospitalDetails from './HospitalDetails'
 import GenericDetails from './GenericDetails'
+
 import * as CONSTANTS from '../services/constants'
 import * as UTIL from '../services/util'
 

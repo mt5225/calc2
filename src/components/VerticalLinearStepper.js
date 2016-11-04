@@ -14,6 +14,8 @@ import Car from './Car'
 import Result from './Result'
 import { nextActionVerify, prevAction, snackBarCloseAction, resetAction } from '../actions'
 import { push } from 'react-router-redux'
+import ImageCarousel from './ImageCarousel'
+
 
 class VerticalLinearStepper extends React.Component {
 
@@ -57,56 +59,74 @@ class VerticalLinearStepper extends React.Component {
     }
 
     render() {
-        const style = {
-            marginRight: 20,
-            position: 'relative',
-            top: 16,
-            right: -320
+        const styles = {
+            homeButton: {
+                marginRight: 20,
+                position: 'relative',
+                top: 10,
+                right: -340,
+                zIndex: 100,
+            },
+            page: {
+                maxWidth: 400,
+                maxHeight: 400,
+                margin: 'auto'
+            },
+            carousel: {
+                width: '100%',
+                margin: 0,
+            }
         };
         return (
-            <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto' }}>
-                <FloatingActionButton style={style} mini={true} onClick={this.props.homeAction}>
-                    <ContentHome />
-                </FloatingActionButton>
+            <div>
+                <div style={styles.carousel}>
+                    <ImageCarousel />
+                </div>
+                <div style={styles.homeButton} >
+                    <FloatingActionButton mini={true} onClick={this.props.homeAction}>
+                        <ContentHome />
+                    </FloatingActionButton>
+                </div>
+                <div>
+                    <Stepper activeStep={this.props.stepIndex} orientation="vertical">
+                        <Step>
+                            <StepLabel>选择生产方式</StepLabel>
+                            <StepContent>
+                                <Hospital />
+                                {this.renderStepActions(0)}
+                            </StepContent>
+                        </Step>
+                        <Step>
 
-                <Stepper activeStep={this.props.stepIndex} orientation="vertical">
-                    <Step>
-                        <StepLabel>选择生产方式</StepLabel>
-                        <StepContent>
-                            <Hospital />
-                            {this.renderStepActions(0)}
-                        </StepContent>
-                    </Step>
-                    <Step>
-
-                        <StepLabel>选择产科医生</StepLabel>
-                        <StepContent>
-                            <Doctor />
-                            {this.renderStepActions(1)}
-                        </StepContent>
-                    </Step>
-                    <Step>
-                        <StepLabel>预计在美逗留时间</StepLabel>
-                        <StepContent>
-                            <SliderSelectDays />
-                            {this.renderStepActions(2)}
-                        </StepContent>
-                    </Step>
-                    <Step>
-                        <StepLabel>住宿与生活</StepLabel>
-                        <StepContent>
-                            <House />
-                            {this.renderStepActions(3)}
-                        </StepContent>
-                    </Step>
-                    <Step>
-                        <StepLabel>交通</StepLabel>
-                        <StepContent>
-                            <Car />
-                            {this.renderStepActions(4)}
-                        </StepContent>
-                    </Step>
-                </Stepper>
+                            <StepLabel>选择产科医生</StepLabel>
+                            <StepContent>
+                                <Doctor />
+                                {this.renderStepActions(1)}
+                            </StepContent>
+                        </Step>
+                        <Step>
+                            <StepLabel>预计在美逗留时间</StepLabel>
+                            <StepContent>
+                                <SliderSelectDays />
+                                {this.renderStepActions(2)}
+                            </StepContent>
+                        </Step>
+                        <Step>
+                            <StepLabel>住宿与生活</StepLabel>
+                            <StepContent>
+                                <House />
+                                {this.renderStepActions(3)}
+                            </StepContent>
+                        </Step>
+                        <Step>
+                            <StepLabel>交通</StepLabel>
+                            <StepContent>
+                                <Car />
+                                {this.renderStepActions(4)}
+                            </StepContent>
+                        </Step>
+                    </Stepper>
+                </div>
                 {this.props.finished && (
                     <div style={{ margin: '20px 0' }}>
                         <Result />

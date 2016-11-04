@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { List, ListItem } from 'material-ui/List'
 import Avatar from 'material-ui/Avatar'
-import { darkBlack } from 'material-ui/styles/colors'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import { connect } from 'react-redux'
 import { hospitalItemSelectedAction, fetchHospitalRecordAction } from '../actions'
+import FlatButton from 'material-ui/FlatButton'
+import Paper from 'material-ui/Paper'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 class HospitalList extends Component {
     componentDidMount() {
@@ -13,39 +16,46 @@ class HospitalList extends Component {
     render() {
         const styles = {
             title: {
-                textAlign: 'center'
+                height: '100%',
+                width: '100%',
+                margin: 0,          
+                display: 'block',           
+            },
+            headText: {
+                textAlign: 'center',
+                paddingTop: 5,
             }
         }
 
         let listItem = ''
         if (this.props.data.ifReady) {
-             listItem = this.props.data.records.map(
+            listItem = this.props.data.records.map(
                 (item) => {
-                    return (<ListItem
-                        key={item.id}
-                        value={item.hospital}
-                        primaryText={item.hospital}
-                        onTouchTap={this.props.selectHospital.bind(this, item.hospital)}
-                        leftAvatar={(<Avatar src={"images/" + item.id + ".png"} />)}
-                        secondaryTextLines={2}
-                        secondaryText={
-                            <p>
-                                <span style={{ color: darkBlack }}>{item.hospital_cn}</span> &nbsp;
-                     {item.rating === 0 ? "没有评分不进入排名" : "产科综合评分:" + item.rating}
-                            </p>
-                        }
-                        />
+                    let detail = item.hospital + '\t'
+                    detail += item.rating === 0 ?
+                        "没有评分不进入排名" : "产科综合评分:" + item.rating
+                    return (
+                        <Card key={item.id}
+                            onTouchTap={this.props.selectHospital.bind(this, item.hospital)}>
+                            <CardMedia
+                                overlay={<CardTitle title={item.hospital_cn} subtitle={detail} />}
+                                >
+                                <img src={item.main_image} />
+                            </CardMedia>
+                        </Card>
                     )
                 }
             )
         }
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                 <div>
-                    <h3 style={styles.title}>赴美生子 - 洛杉矶医院排名</h3>
-                    <List>
+                    <Paper style={styles.title} zDepth={1}>
+                        <p style={styles.headText}>赴美生子 - 洛杉矶医院排名</p>
+                    </Paper>
+                    <div>
                         {listItem}
-                    </List>
+                    </div>
                 </div>
             </MuiThemeProvider>
         )
