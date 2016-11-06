@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Divider from 'material-ui/Divider'
 import Checkbox from 'material-ui/Checkbox'
@@ -7,6 +7,9 @@ import Subheader from 'material-ui/Subheader'
 import { houseAction, careAction, cityAction } from '../actions'
 import GenericDetails from './GenericDetails'
 import * as CONSTANTS from '../services/constants'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 class House extends Component {
 
@@ -49,53 +52,55 @@ class House extends Component {
                 ' 每月.'
         }
         return (
-            <div>
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                 <div>
-                    <Subheader>选择居住的城市</Subheader>
-                    <RadioButtonGroup
-                        name="city"
-                        onChange={this.props.cityQ}
-                        defaultSelected={this.props.cityName}
-                        >
-                        {radioBtn}
-                    </RadioButtonGroup>
-                </div>
-                <GenericDetails
-                    style={this.props.style}
-                    content={details}
-                    />
-                <Divider/>
-                <div>
-                    <Subheader>选择居住房型</Subheader>
-                    <RadioButtonGroup
-                        name="houseType"
-                        defaultSelected={this.props.house_type}
-                        onChange={this.props.houseQ}
-                        >
-                        <RadioButton
-                            value="1b1b"
-                            label="一房一卫"
-                            style={styles.radioButton}
-                            />
-                        <RadioButton
-                            value="2b1b"
-                            label="两房一卫"
-                            style={styles.radioButton}
-                            />
-                    </RadioButtonGroup>
-                </div>
-                <Divider/>
-                <div>
-                    <Subheader>月嫂服务,约6,000USD含20%小费</Subheader>
-                    <Checkbox
-                        label="需要"
-                        value="yes"
-                        style={styles.checkbox}
-                        checked={this.props.need_care}
-                        onCheck={this.props.careQ}
+                    <div>
+                        <Subheader>选择居住的城市</Subheader>
+                        <RadioButtonGroup
+                            name="city"
+                            onChange={this.props.cityQ}
+                            defaultSelected={this.props.cityName}
+                            >
+                            {radioBtn}
+                        </RadioButtonGroup>
+                    </div>
+                    <GenericDetails
+                        style={this.props.style}
+                        content={details}
                         />
+                    <Divider />
+                    <div>
+                        <Subheader>选择居住房型</Subheader>
+                        <RadioButtonGroup
+                            name="houseType"
+                            defaultSelected={this.props.house_type}
+                            onChange={this.props.houseQ}
+                            >
+                            <RadioButton
+                                value="1b1b"
+                                label="一房一卫"
+                                style={styles.radioButton}
+                                />
+                            <RadioButton
+                                value="2b1b"
+                                label="两房一卫"
+                                style={styles.radioButton}
+                                />
+                        </RadioButtonGroup>
+                    </div>
+                    <Divider />
+                    <div>
+                        <Subheader>月嫂服务,约6,000USD含20%小费</Subheader>
+                        <Checkbox
+                            label="需要"
+                            value="yes"
+                            style={styles.checkbox}
+                            checked={this.props.need_care}
+                            onCheck={this.props.careQ}
+                            />
+                    </div>
                 </div>
-            </div>
+            </MuiThemeProvider>
         );
     }
 }
@@ -118,8 +123,8 @@ const mapStateToProps = (state) => {
     }
 
     let style = state.uiReducer.step_3_city_house_rent === 'hidden' ? CONSTANTS.hideElement : CONSTANTS.showElement
-    
-    if(!city) {
+
+    if (!city) {
         style = CONSTANTS.hideElement
     }
 

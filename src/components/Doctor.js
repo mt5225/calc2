@@ -5,6 +5,9 @@ import { doctorAction } from '../actions'
 import DoctorDetail from './DoctorDetail'
 import * as CONSTANTS from '../services/constants'
 import * as UTIL from '../services/util'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 class Doctor extends Component {
     render() {
@@ -33,16 +36,19 @@ class Doctor extends Component {
         return (
             <div>
                 <br />
-                <RadioButtonGroup
-                    name="doctorName"
-                    defaultSelected={this.props.doctorSelected}
-                    onChange={this.props.doctorQ}>
-                    {radioBtn}
-                </RadioButtonGroup>
+                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                    <RadioButtonGroup
+                        name="doctorName"
+                        defaultSelected={this.props.doctorSelected}
+                        onChange={this.props.doctorQ}>
+                        {radioBtn}
+                    </RadioButtonGroup>
+                </MuiThemeProvider>
                 <DoctorDetail
                     style={this.props.style}
                     doctor={this.props.doctorDetail}
                     />
+
             </div>
         );
     }

@@ -7,6 +7,9 @@ import FlatButton from 'material-ui/FlatButton'
 import { resetAction } from '../actions'
 import calcPrice from '../services/calc'
 import * as UTIL from '../services/util'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 class Result extends Component {
     render() {
@@ -50,56 +53,58 @@ class Result extends Component {
         other += this.props.choise.need_care ? " 月嫂6,000USD (含20%小费)" : ""
 
         return (
-            <div>
-                <Card initiallyExpanded={true}>
-                    <CardHeader
-                        title={title}
-                        titleStyle={{ fontSize: 'large' }}
-                        subtitle={subtitle}
-                        actAsExpander={true}
-                        showExpandableButton={true}
-                        />
-                    <CardText expandable={true} >
-                        <List>
-                            <ListItem
-                                primaryText={"医院 " + this.props.choise.hospital_name}
-                                secondaryText={hospitalPrice}
-                                secondaryTextLines={1}
-                                />
-                            <ListItem
-                                primaryText={"医生 " + this.props.choise.doctor_name}
-                                secondaryText={doctorPrice}
-                                secondaryTextLines={1}
-                                />
-                            <ListItem
-                                primaryText={"住 " + this.props.choise.city}
-                                secondaryText={living}
-                                secondaryTextLines={1}
-                                />
-                            <ListItem
-                                secondaryText={"注：租金是根据洛杉矶本地全家具服务式公寓，包水电气及上网费用估算，仅供参考。"}
-                                secondaryTextLines={2}
-                                />
-                            <ListItem
-                                primaryText={"其他"}
-                                secondaryText={other}
-                                secondaryTextLines={2}
-                                />
-                            <ListItem
-                                secondaryText={this.props.choise.car_type === 'uber' ? "注：交通费用(公交 + uber)是根据超市购物，产检等必要需求估算, 仅供参考。" : "注：自己租车的费用根据常规租车公司带保险价格估算, 仅供参考。"}
-                                secondaryTextLines={2}
-                                />
-                        </List>
-                    </CardText>
-                    <CardActions>
-                        <FlatButton label="分享计算结果" />
-                        <FlatButton label="重头开始" primary={true} onClick={(event) => {
-                            event.preventDefault()
-                            this.props.resetAction()
-                        } } />
-                    </CardActions>
-                </Card>
-            </div>
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                <div>
+                    <Card initiallyExpanded={true}>
+                        <CardHeader
+                            title={title}
+                            titleStyle={{ fontSize: 'large' }}
+                            subtitle={subtitle}
+                            actAsExpander={true}
+                            showExpandableButton={true}
+                            />
+                        <CardText expandable={true} >
+                            <List>
+                                <ListItem
+                                    primaryText={"医院 " + this.props.choise.hospital_name}
+                                    secondaryText={hospitalPrice}
+                                    secondaryTextLines={1}
+                                    />
+                                <ListItem
+                                    primaryText={"医生 " + this.props.choise.doctor_name}
+                                    secondaryText={doctorPrice}
+                                    secondaryTextLines={1}
+                                    />
+                                <ListItem
+                                    primaryText={"住 " + this.props.choise.city}
+                                    secondaryText={living}
+                                    secondaryTextLines={1}
+                                    />
+                                <ListItem
+                                    secondaryText={"注：租金是根据洛杉矶本地全家具服务式公寓，包水电气及上网费用估算，仅供参考。"}
+                                    secondaryTextLines={2}
+                                    />
+                                <ListItem
+                                    primaryText={"其他"}
+                                    secondaryText={other}
+                                    secondaryTextLines={2}
+                                    />
+                                <ListItem
+                                    secondaryText={this.props.choise.car_type === 'uber' ? "注：交通费用(公交 + uber)是根据超市购物，产检等必要需求估算, 仅供参考。" : "注：自己租车的费用根据常规租车公司带保险价格估算, 仅供参考。"}
+                                    secondaryTextLines={2}
+                                    />
+                            </List>
+                        </CardText>
+                        <CardActions>
+                            <FlatButton label="分享计算结果" />
+                            <FlatButton label="重头开始" primary={true} onClick={(event) => {
+                                event.preventDefault()
+                                this.props.resetAction()
+                            } } />
+                        </CardActions>
+                    </Card>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

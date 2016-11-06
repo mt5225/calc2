@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
 import HospitalDetails from './HospitalDetails'
 import GenericDetails from './GenericDetails'
-
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import * as CONSTANTS from '../services/constants'
 import * as UTIL from '../services/util'
 
@@ -20,22 +22,24 @@ class Hospital extends Component {
         }
         return (
             <div>
-                <HospitalDetails style={this.props.hospitalDetailStyle}  detail={this.props.hospitalDetail} />
-                <RadioButtonGroup name="productionType"
-                    defaultSelected={this.props.production_type}
-                    onChange={this.props.productionQ}>
-                    <RadioButton
-                        value="nature"
-                        label="顺产"
-                        style={styles.radioButton}
-                        />
-                    <RadioButton
-                        value="c_section"
-                        label="剖腹产"
-                        style={styles.radioButton}
-                        />
-                </RadioButtonGroup>
-                <GenericDetails style={this.props.priceDetailsStyle} content={this.props.priceDetail}/>
+                <HospitalDetails style={this.props.hospitalDetailStyle} detail={this.props.hospitalDetail} />
+                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                    <RadioButtonGroup name="productionType"
+                        defaultSelected={this.props.production_type}
+                        onChange={this.props.productionQ}>
+                        <RadioButton
+                            value="nature"
+                            label="顺产"
+                            style={styles.radioButton}
+                            />
+                        <RadioButton
+                            value="c_section"
+                            label="剖腹产"
+                            style={styles.radioButton}
+                            />
+                    </RadioButtonGroup>
+                </MuiThemeProvider>
+                <GenericDetails style={this.props.priceDetailsStyle} content={this.props.priceDetail} />
             </div >
         );
     }

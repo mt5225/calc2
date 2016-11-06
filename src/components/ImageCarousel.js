@@ -6,15 +6,14 @@ import SwipeableViews from 'react-swipeable-views'
 class ImageCarousel extends Component {
 
     render() {
-        console.log(this.props.hospitalDetail.images)
-
-        const images = this.props.hospitalDetail.images.map((item) => {
+       
+        const images = this.props.hospitalDetail? this.props.hospitalDetail.images.map((item) => {
             return (
                 <div key={item}>
                     <img src={item} alt={this.props.hospitalDetail.hospital_cn} />
                 </div>
             )
-        })
+        }): ''
         return (
             <SwipeableViews>
                {images}

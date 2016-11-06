@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import Avatar from 'material-ui/Avatar'
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
+import { Card,  CardMedia, CardTitle } from 'material-ui/Card'
 import { connect } from 'react-redux'
 import { hospitalItemSelectedAction, fetchHospitalRecordAction } from '../actions'
-import FlatButton from 'material-ui/FlatButton'
 import Paper from 'material-ui/Paper'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
@@ -40,7 +38,7 @@ class HospitalList extends Component {
                             <CardMedia
                                 overlay={<CardTitle title={item.hospital_cn} subtitle={detail} />}
                                 >
-                                <img src={item.main_image} />
+                                <img src={item.main_image} alt={item.hospital}/>
                             </CardMedia>
                         </Card>
                     )

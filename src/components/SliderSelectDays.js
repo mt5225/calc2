@@ -2,10 +2,14 @@ import React, {Component} from 'react'
 import Slider from 'material-ui/Slider'
 import { connect } from 'react-redux'
 import { daysAction } from '../actions'
+import { fullWhite } from 'material-ui/styles/colors'
 
 class SliderSelectDays extends Component {
 
     render() {
+        const text = {
+            color: fullWhite
+        }
         return (
             <div className={'row'}>
             <div className={'col-xs-9'}>
@@ -19,7 +23,7 @@ class SliderSelectDays extends Component {
                     />
                     </div>
                     <div className={'col-xs-3'}>
-                <p>
+                <p style={text}>
                     {this.props.days} 天
                 </p>
                 </div>

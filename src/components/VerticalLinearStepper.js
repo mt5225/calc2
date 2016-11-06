@@ -15,7 +15,10 @@ import Result from './Result'
 import { nextActionVerify, prevAction, snackBarCloseAction, resetAction } from '../actions'
 import { push } from 'react-router-redux'
 import ImageCarousel from './ImageCarousel'
-
+import { darkBlack, fullWhite } from 'material-ui/styles/colors'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 class VerticalLinearStepper extends React.Component {
 
@@ -23,26 +26,28 @@ class VerticalLinearStepper extends React.Component {
         super(props);
         this.renderStepActions = (step) => {
             return (
-                <div style={{ margin: '12px 0' }}>
-                    <RaisedButton
-                        label={this.props.stepIndex === 4 ? '完成' : '下一步'}
-                        disableTouchRipple={true}
-                        disableFocusRipple={true}
-                        primary={true}
-                        disabled={this.props.nextBtnDisable}
-                        onTouchTap={this.props.nextAction}
-                        style={{ marginRight: 12 }}
-                        />
-                    {step > 0 && (
-                        <FlatButton
-                            label="上一步"
-                            disabled={this.props.stepIndex === 0}
+                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                    <div style={{ margin: '12px 0' }}>
+                        <RaisedButton
+                            label={this.props.stepIndex === 4 ? '完成' : '下一步'}
                             disableTouchRipple={true}
                             disableFocusRipple={true}
-                            onTouchTap={this.props.prevAction}
+                            primary={true}
+                            disabled={this.props.nextBtnDisable}
+                            onTouchTap={this.props.nextAction}
+                            style={{ marginRight: 12 }}
                             />
-                    )}
-                </div>
+                        {step > 0 && (
+                            <FlatButton
+                                label="上一步"
+                                disabled={this.props.stepIndex === 0}
+                                disableTouchRipple={true}
+                                disableFocusRipple={true}
+                                onTouchTap={this.props.prevAction}
+                                />
+                        )}
+                    </div>
+                </MuiThemeProvider>
             );
         }
     }
@@ -62,10 +67,10 @@ class VerticalLinearStepper extends React.Component {
         const styles = {
             homeButton: {
                 marginRight: 20,
-                position: 'relative',
-                top: 10,
-                right: -340,
-                zIndex: 100,
+                position: 'absolute',
+                top: 280,
+                right: -10,
+                zIndex: 1,
             },
             page: {
                 maxWidth: 400,
@@ -75,10 +80,17 @@ class VerticalLinearStepper extends React.Component {
             carousel: {
                 width: '100%',
                 margin: 0,
+            },
+            main: {
+                backgroundColor: darkBlack,
+                position: 'relative'
+            },
+            text: {
+                color: fullWhite,
             }
         };
         return (
-            <div>
+            <div style={styles.main}>
                 <div style={styles.carousel}>
                     <ImageCarousel />
                 </div>
@@ -90,7 +102,7 @@ class VerticalLinearStepper extends React.Component {
                 <div>
                     <Stepper activeStep={this.props.stepIndex} orientation="vertical">
                         <Step>
-                            <StepLabel>选择生产方式</StepLabel>
+                            <StepLabel style={styles.text}>选择生产方式</StepLabel>
                             <StepContent>
                                 <Hospital />
                                 {this.renderStepActions(0)}
@@ -98,28 +110,28 @@ class VerticalLinearStepper extends React.Component {
                         </Step>
                         <Step>
 
-                            <StepLabel>选择产科医生</StepLabel>
+                            <StepLabel style={styles.text}>选择产科医生</StepLabel>
                             <StepContent>
                                 <Doctor />
                                 {this.renderStepActions(1)}
                             </StepContent>
                         </Step>
                         <Step>
-                            <StepLabel>预计在美逗留时间</StepLabel>
+                            <StepLabel style={styles.text}>预计在美逗留时间</StepLabel>
                             <StepContent>
                                 <SliderSelectDays />
                                 {this.renderStepActions(2)}
                             </StepContent>
                         </Step>
                         <Step>
-                            <StepLabel>住宿与生活</StepLabel>
+                            <StepLabel style={styles.text}>住宿与生活</StepLabel>
                             <StepContent>
                                 <House />
                                 {this.renderStepActions(3)}
                             </StepContent>
                         </Step>
                         <Step>
-                            <StepLabel>交通</StepLabel>
+                            <StepLabel style={styles.text}>交通</StepLabel>
                             <StepContent>
                                 <Car />
                                 {this.renderStepActions(4)}
