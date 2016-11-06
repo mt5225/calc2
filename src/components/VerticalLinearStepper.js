@@ -19,6 +19,7 @@ import { darkBlack, fullWhite } from 'material-ui/styles/colors'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import Paper from 'material-ui/Paper'
 
 class VerticalLinearStepper extends React.Component {
     constructor(props) {
@@ -84,6 +85,10 @@ class VerticalLinearStepper extends React.Component {
             text: {
                 color: fullWhite,
             },
+            buttom: {
+                height: 1,
+                 width: '100%',
+            }
         }
         return (
             <div style={styles.main}>
@@ -147,6 +152,9 @@ class VerticalLinearStepper extends React.Component {
                     autoHideDuration={1200}
                     onRequestClose={this.props.snackBarCloseAction}
                     />
+                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                     <Paper style={styles.buttom} zDepth={1} />
+                </MuiThemeProvider>
             </div>
         );
     }
