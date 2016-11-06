@@ -56,7 +56,9 @@ class HospitalDetails extends Component {
                             </TableRow>
                             <TableRow>
                                 <TableRowColumn> 评分</TableRowColumn>
-                                <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.rating}</TableRowColumn>
+                                <TableRowColumn colSpan={5} style={styles.td}>{this.props.detail.rating === 0 ?
+                                    '没有评分不进入排名' :
+                                    this.props.detail.rating}</TableRowColumn>
                             </TableRow>
                             <TableRow>
                                 <TableRowColumn>网址</TableRowColumn>

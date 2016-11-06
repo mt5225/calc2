@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { Card,  CardMedia, CardTitle } from 'material-ui/Card'
+import { Card, CardMedia, CardTitle } from 'material-ui/Card'
 import { connect } from 'react-redux'
 import { hospitalItemSelectedAction, fetchHospitalRecordAction } from '../actions'
 import Paper from 'material-ui/Paper'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { fullWhite } from 'material-ui/styles/colors'
+import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation'
+import IconLocationOn from 'material-ui/svg-icons/communication/location-on'
+
+const nearbyIcon = <IconLocationOn />;
 
 class HospitalList extends Component {
     componentDidMount() {
@@ -13,15 +18,13 @@ class HospitalList extends Component {
     }
     render() {
         const styles = {
-            title: {
-                height: '100%',
-                width: '100%',
-                margin: 0,          
-                display: 'block',           
-            },
             headText: {
                 textAlign: 'center',
-                paddingTop: 5,
+                color: fullWhite,
+                margin: 0,
+                paddingTop: 15,
+                paddingLeft: 8,
+                fontSize: 18
             }
         }
 
@@ -38,7 +41,7 @@ class HospitalList extends Component {
                             <CardMedia
                                 overlay={<CardTitle title={item.hospital_cn} subtitle={detail} />}
                                 >
-                                <img src={item.main_image} alt={item.hospital}/>
+                                <img src={item.main_image} alt={item.hospital} />
                             </CardMedia>
                         </Card>
                     )
@@ -49,11 +52,16 @@ class HospitalList extends Component {
             <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                 <div>
                     <Paper style={styles.title} zDepth={1}>
-                        <p style={styles.headText}>赴美生子 - 洛杉矶医院排名</p>
+                        <BottomNavigation>
+                            <p style={styles.headText}>赴美生子 - 洛杉矶医院排名</p>                           
+                            <BottomNavigationItem
+                                label="Map"
+                                icon={nearbyIcon}
+                                onTouchTap={() => {}}
+                                />
+                        </BottomNavigation>
                     </Paper>
-                    <div>
-                        {listItem}
-                    </div>
+                    {listItem}
                 </div>
             </MuiThemeProvider>
         )

@@ -1,6 +1,10 @@
 /**
  * utils for find record
  */
+export function mod(n, m) {
+    const q = n % m;
+    return q < 0 ? (q + m) : q;
+}
 
 export function getHospitalDetailByName(hospital_name, records) {
     let hospitalDetail = null
@@ -24,19 +28,19 @@ export function getDoctorListByHospitalName(hospital_name, records) {
 
 export function getDoctorFromListByName(doctorList, name) {
     let doctor = null
-    for(var index = 0; index < doctorList.length; index++) {
-        if(doctorList[index].name === name) {
+    for (var index = 0; index < doctorList.length; index++) {
+        if (doctorList[index].name === name) {
             doctor = doctorList[index]
         }
     }
     return doctor
 }
 
-export function getHouseDetailByHospitalAndHouseName (hospital_name, house_name, records) {
+export function getHouseDetailByHospitalAndHouseName(hospital_name, house_name, records) {
     let hospitalDetail = getHospitalDetailByName(hospital_name, records)
     let houseDetail = null
     for (var index = 0; index < hospitalDetail.cities.length; index++) {
-        if ( hospitalDetail.cities[index].name === house_name) {
+        if (hospitalDetail.cities[index].name === house_name) {
             houseDetail = hospitalDetail.cities[index]
         }
     }

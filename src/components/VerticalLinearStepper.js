@@ -21,9 +21,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 class VerticalLinearStepper extends React.Component {
-
     constructor(props) {
         super(props);
+
         this.renderStepActions = (step) => {
             return (
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
@@ -63,6 +63,7 @@ class VerticalLinearStepper extends React.Component {
         window.onpopstate = this.props.onBackButtonEvent
     }
 
+
     render() {
         const styles = {
             homeButton: {
@@ -71,11 +72,6 @@ class VerticalLinearStepper extends React.Component {
                 top: 280,
                 right: -10,
                 zIndex: 1,
-            },
-            page: {
-                maxWidth: 400,
-                maxHeight: 400,
-                margin: 'auto'
             },
             carousel: {
                 width: '100%',
@@ -87,8 +83,8 @@ class VerticalLinearStepper extends React.Component {
             },
             text: {
                 color: fullWhite,
-            }
-        };
+            },
+        }
         return (
             <div style={styles.main}>
                 <div style={styles.carousel}>
