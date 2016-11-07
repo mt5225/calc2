@@ -21,10 +21,11 @@ class HospitalDetails extends Component {
 
 
         if (this.props.detail) {
-            const price = '顺产: ' +
-                this.props.detail.price.normal +
-                ', 剖腹产: ' +
-                this.props.detail.price.csection
+            const price = (
+                <div>
+                    <p> {'顺产: ' + this.props.detail.price.normal} </p>
+                    <p> {'剖腹产: ' + this.props.detail.price.csection} </p>
+                </div>)
 
             hospital_detail = (
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>

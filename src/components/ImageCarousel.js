@@ -20,6 +20,12 @@ class ImageCarousel extends Component {
     }
 
     slideRenderer = (params) => {
+        const styles = {
+            img: {
+                maxWidth: '100%',
+                maxHeight: '100%',
+            }
+        }
         const {
             index,
             key,
@@ -27,7 +33,7 @@ class ImageCarousel extends Component {
         if (this.props.hospitalDetail) {
             const modNumber = this.props.hospitalDetail.images.length
             return (
-                <img src={this.props.hospitalDetail.images[UTIL.mod(index, modNumber)]}
+                <img style={styles.img} src={this.props.hospitalDetail.images[UTIL.mod(index, modNumber)]}
                     key={key} alt={this.props.hospitalDetail.hospital_cn} />
             )
         } else {
@@ -37,7 +43,6 @@ class ImageCarousel extends Component {
 
     }
     render() {
-
         return (
             <AutoPlaySwipeableViews
                 index={this.state.index}

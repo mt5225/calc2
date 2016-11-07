@@ -25,6 +25,9 @@ class HospitalList extends Component {
                 paddingTop: 15,
                 paddingLeft: 8,
                 fontSize: 18
+            },
+            cardTitle: {
+                fontSize: 18,
             }
         }
 
@@ -39,7 +42,10 @@ class HospitalList extends Component {
                         <Card key={item.id}
                             onTouchTap={this.props.selectHospital.bind(this, item.hospital)}>
                             <CardMedia
-                                overlay={<CardTitle title={item.hospital_cn} subtitle={detail} />}
+                                overlay={
+                                    <CardTitle title={item.hospital_cn} titleStyle={styles.cardTitle}
+                                        subtitle={detail} />
+                                }
                                 >
                                 <img src={item.main_image} alt={item.hospital} />
                             </CardMedia>
@@ -53,11 +59,11 @@ class HospitalList extends Component {
                 <div>
                     <Paper style={styles.title} zDepth={1}>
                         <BottomNavigation>
-                            <p style={styles.headText}>赴美生子 - 洛杉矶医院排名</p>                           
+                            <p style={styles.headText}>洛杉矶医院排名</p>
                             <BottomNavigationItem
                                 label="Map"
                                 icon={nearbyIcon}
-                                onTouchTap={() => {}}
+                                onTouchTap={() => { } }
                                 />
                         </BottomNavigation>
                     </Paper>

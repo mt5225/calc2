@@ -70,8 +70,8 @@ class VerticalLinearStepper extends React.Component {
             homeButton: {
                 marginRight: 20,
                 position: 'absolute',
-                top: 280,
-                right: -10,
+                top: 240,
+                right: -12,
                 zIndex: 1,
             },
             carousel: {
@@ -87,8 +87,8 @@ class VerticalLinearStepper extends React.Component {
             },
             buttom: {
                 height: 1,
-                 width: '100%',
-            }
+                width: '100%',
+            },
         }
         return (
             <div style={styles.main}>
@@ -96,8 +96,10 @@ class VerticalLinearStepper extends React.Component {
                     <ImageCarousel />
                 </div>
                 <div style={styles.homeButton} >
-                    <FloatingActionButton mini={true} onClick={this.props.homeAction}>
-                        <ContentHome />
+                    <FloatingActionButton                       
+                        mini={true}
+                        onClick={this.props.homeAction}>
+                        <ContentHome color={fullWhite}/>
                     </FloatingActionButton>
                 </div>
                 <div>
@@ -153,7 +155,7 @@ class VerticalLinearStepper extends React.Component {
                     onRequestClose={this.props.snackBarCloseAction}
                     />
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-                     <Paper style={styles.buttom} zDepth={1} />
+                    <Paper style={styles.buttom} zDepth={1} />
                 </MuiThemeProvider>
             </div>
         );
