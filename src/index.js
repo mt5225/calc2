@@ -14,6 +14,7 @@ import HospitalList from './components/HospitalList'
 import NotFound from './components/NotFound'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
+
 injectTapEventPlugin();
 
 const logger = createLogger()

@@ -9,10 +9,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { fullWhite } from 'material-ui/styles/colors'
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation'
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on'
+import HospitalsMap from './HospitalsMap'
+import FlatButton from 'material-ui/FlatButton'
+import Dialog from 'material-ui/Dialog'
 
 const nearbyIcon = <IconLocationOn />;
 
 class HospitalList extends Component {
+    state = {
+        open: false,
+    };
+
+    handleOpen = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
     componentDidMount() {
         this.props.dispatch(fetchHospitalRecordAction())
     }
@@ -28,9 +42,20 @@ class HospitalList extends Component {
             },
             cardTitle: {
                 fontSize: 18,
+            },
+            mapDialog: {
+                width: '100%',
+                maxWidth: 'none',
             }
         }
-
+        const actions = [
+            <FlatButton
+                label="关闭"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+                />,
+        ]
         let listItem = ''
         if (this.props.data.ifReady) {
             listItem = this.props.data.records.map(
@@ -63,10 +88,21 @@ class HospitalList extends Component {
                             <BottomNavigationItem
                                 label="Map"
                                 icon={nearbyIcon}
-                                onTouchTap={() => { } }
+                                onTouchTap={this.handleOpen}
                                 />
                         </BottomNavigation>
                     </Paper>
+                    <div>
+                        <Dialog
+                            actions={actions}
+                            modal={false}
+                            open={this.state.open}
+                            onRequestClose={this.handleClose}
+                            contentStyle={styles.mapDialog}
+                            >
+                            <HospitalsMap />
+                        </Dialog>
+                    </div>
                     {listItem}
                 </div>
             </MuiThemeProvider>

@@ -91,3 +91,12 @@ export function canGoNext(currentAnsware, currentStep) {
 
     return result
 }
+
+export function strToCoordinate(str) {
+    const arrayOfStrings = str.split(',')
+    const geo = arrayOfStrings.map( (item) => {
+        return parseFloat(item.trim())
+    })
+    console.log(geo)
+    return geo
+}

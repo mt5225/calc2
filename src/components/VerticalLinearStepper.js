@@ -20,6 +20,9 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Paper from 'material-ui/Paper'
+import IconLocationOn from 'material-ui/svg-icons/communication/location-on'
+import HospitalMap from './HospitalMap'
+import Dialog from 'material-ui/Dialog'
 
 class VerticalLinearStepper extends React.Component {
     constructor(props) {
@@ -64,6 +67,17 @@ class VerticalLinearStepper extends React.Component {
         window.onpopstate = this.props.onBackButtonEvent
     }
 
+    state = {
+        open: false,
+    };
+
+    handleOpen = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
     render() {
         const styles = {
@@ -72,6 +86,13 @@ class VerticalLinearStepper extends React.Component {
                 position: 'absolute',
                 top: 240,
                 right: -12,
+                zIndex: 1,
+            },
+            mapButton: {
+                marginRight: 20,
+                position: 'absolute',
+                top: 240,
+                right: 40,
                 zIndex: 1,
             },
             carousel: {
@@ -89,18 +110,39 @@ class VerticalLinearStepper extends React.Component {
                 height: 1,
                 width: '100%',
             },
+            mapDialog: {
+                width: '100%',
+                maxWidth: 'none',
+            }
         }
+        const actions = [
+            <FlatButton
+                label="关闭"
+                primary={true}
+                keyboardFocused={true}
+                onTouchTap={this.handleClose}
+                />,
+        ]
         return (
             <div style={styles.main}>
                 <div style={styles.carousel}>
                     <ImageCarousel />
                 </div>
-                <div style={styles.homeButton} >
-                    <FloatingActionButton                       
-                        mini={true}
-                        onClick={this.props.homeAction}>
-                        <ContentHome color={fullWhite}/>
-                    </FloatingActionButton>
+                <div>
+                    <div style={styles.mapButton} >
+                        <FloatingActionButton
+                            mini={true}
+                            onClick={this.handleOpen}>
+                            <IconLocationOn color={fullWhite} />
+                        </FloatingActionButton>
+                    </div>
+                    <div style={styles.homeButton} >
+                        <FloatingActionButton
+                            mini={true}
+                            onClick={this.props.homeAction}>
+                            <ContentHome color={fullWhite} />
+                        </FloatingActionButton>
+                    </div>
                 </div>
                 <div>
                     <Stepper activeStep={this.props.stepIndex} orientation="vertical">
@@ -157,6 +199,17 @@ class VerticalLinearStepper extends React.Component {
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                     <Paper style={styles.buttom} zDepth={1} />
                 </MuiThemeProvider>
+                <div>
+                    <Dialog
+                        actions={actions}
+                        modal={false}
+                        open={this.state.open}
+                        onRequestClose={this.handleClose}
+                        contentStyle={styles.mapDialog}
+                        >
+                        <HospitalMap />
+                    </Dialog>
+                </div>
             </div>
         );
     }
