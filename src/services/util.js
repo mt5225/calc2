@@ -97,6 +97,5 @@ export function strToCoordinate(str) {
     const geo = arrayOfStrings.map( (item) => {
         return parseFloat(item.trim())
     })
-    console.log(geo)
     return geo
 }

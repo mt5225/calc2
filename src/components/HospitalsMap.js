@@ -24,11 +24,16 @@ class HospitalsMap extends React.Component {
     });
     const markers = this.props.ifReady ?
       this.props.hospitals.map((record) => {
-        console.log(record.geo)
+        let detail = (<span> {record.hospital_cn} <br />
+          {record.hospital} <br />
+          {record.rating === 0 ?
+            "没有评分不进入排名" : "产科综合评分:" + record.rating}
+        </span>
+        )
         return (
-          <Marker position={UTIL.strToCoordinate(record.geo)} icon={myIcon} id={record.id}>
+          <Marker position={UTIL.strToCoordinate(record.geo)} icon={myIcon} key={record._id}>
             <Popup closeButton={false}>
-              <span>{record.hospital_cn} <br /> {record.hospital}</span>
+              {detail}
             </Popup>
           </Marker>
         )
