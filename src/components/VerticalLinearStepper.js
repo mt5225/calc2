@@ -23,6 +23,9 @@ import Paper from 'material-ui/Paper'
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on'
 import HospitalMap from './HospitalMap'
 import Dialog from 'material-ui/Dialog'
+import HospitalDetails from './HospitalDetails'
+import * as CONSTANTS from '../services/constants'
+import * as UTIL from '../services/util'
 
 class VerticalLinearStepper extends React.Component {
     constructor(props) {
@@ -84,14 +87,14 @@ class VerticalLinearStepper extends React.Component {
             homeButton: {
                 marginRight: 20,
                 position: 'absolute',
-                top: 240,
+                top: 200,
                 right: -12,
                 zIndex: 1,
             },
             mapButton: {
                 marginRight: 20,
                 position: 'absolute',
-                top: 240,
+                top: 200,
                 right: 40,
                 zIndex: 1,
             },
@@ -127,6 +130,9 @@ class VerticalLinearStepper extends React.Component {
             <div style={styles.main}>
                 <div style={styles.carousel}>
                     <ImageCarousel />
+                </div>
+                <div>
+                <HospitalDetails style={this.props.hospitalDetailStyle} detail={this.props.hospitalDetail} />
                 </div>
                 <div>
                     <div style={styles.mapButton} >
@@ -221,6 +227,8 @@ const mapStateToProps = (state) => {
         finished: state.stepReducer.finished,
         snackBarState: state.validateReducer,
         redirect: state.uiReducer.redirect,
+        hospitalDetail: UTIL.getHospitalDetailByName(state.calcReducer.hospital_name, state.dataReducer.records),
+        hospitalDetailStyle: CONSTANTS.showElement,
     }
 }
 

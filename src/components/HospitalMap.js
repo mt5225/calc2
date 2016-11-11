@@ -24,9 +24,11 @@ class HospitalMap extends React.Component {
                     id={this.props.record.id}>
                     <Popup closeButton={false}>
                         <span>
+                            {this.props.record.hospital}
+                            <br />
                             {this.props.record.hospital_cn}
                             <br />
-                            {this.props.record.hospital}
+                            { '地址：' + this.props.record.address}
                         </span>
                     </Popup>
                 </Marker>

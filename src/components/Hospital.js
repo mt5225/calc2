@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import { connect } from 'react-redux'
 import { hospitalAction, productionAction } from '../actions'
-import HospitalDetails from './HospitalDetails'
 import GenericDetails from './GenericDetails'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -22,7 +21,6 @@ class Hospital extends Component {
         }
         return (
             <div>
-                <HospitalDetails style={this.props.hospitalDetailStyle} detail={this.props.hospitalDetail} />
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                     <RadioButtonGroup name="productionType"
                         defaultSelected={this.props.production_type}
@@ -57,8 +55,6 @@ const mapStateToProps = (state) => {
     return {
         hospital: state.calcReducer.hospital_name,
         production_type: state.calcReducer.production_type,
-        hospitalDetail: hospitalDetail,
-        hospitalDetailStyle: CONSTANTS.showElement,
         priceDetailsStyle: state.uiReducer.step_0_hospital_price === 'hidden' ?
             CONSTANTS.hideElement : CONSTANTS.showElement,
         priceDetail: priceDetail,

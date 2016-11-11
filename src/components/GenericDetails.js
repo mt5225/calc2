@@ -19,7 +19,7 @@ class GenericDetails extends Component {
         return (
             <div>
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-                    <Paper style={this.props.style} zDepth={1} rounded={false}>
+                    <Paper style={this.props.style} zDepth={1} rounded={false}>      
                         <p style={styles.content}> {this.props.content}</p>
                     </Paper>
                 </MuiThemeProvider>

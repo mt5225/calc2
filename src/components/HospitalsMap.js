@@ -24,10 +24,11 @@ class HospitalsMap extends React.Component {
     });
     const markers = this.props.ifReady ?
       this.props.hospitals.map((record) => {
-        let detail = (<span> {record.hospital_cn} <br />
-          {record.hospital} <br />
+        let detail = (<span> {record.hospital} <br />
+          {record.hospital_cn} <br />
           {record.rating === 0 ?
-            "没有评分不进入排名" : "产科综合评分:" + record.rating}
+            "没有评分不进入排名" : "产科综合评分:" + record.rating} <br />
+          {'地址: ' + record.address}
         </span>
         )
         return (
