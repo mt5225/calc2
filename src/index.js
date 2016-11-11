@@ -11,7 +11,6 @@ import calcApp from './reducers'
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import HospitalList from './components/HospitalList'
-import NotFound from './components/NotFound'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import Landing from './components/Landing'
 

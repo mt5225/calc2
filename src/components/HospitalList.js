@@ -41,11 +41,14 @@ class HospitalList extends Component {
                 fontSize: 18
             },
             cardTitle: {
-                fontSize: 18,
+                fontSize: 12,
             },
             mapDialog: {
                 width: '100%',
                 maxWidth: 'none',
+            },
+            block: {
+                marginBottom: 5,
             }
         }
         const actions = [
@@ -68,8 +71,11 @@ class HospitalList extends Component {
                             onTouchTap={this.props.selectHospital.bind(this, item.hospital)}>
                             <CardMedia
                                 overlay={
-                                    <CardTitle title={item.hospital_cn} titleStyle={styles.cardTitle}
-                                        subtitle={detail} />
+                                    (<div style={styles.block}>
+                                        <span> &nbsp; &nbsp;{item.hospital_cn}</span>
+                                        <br />
+                                        <span style={styles.cardTitle}> &nbsp; &nbsp; {detail}</span>
+                                    </div>)
                                 }
                                 >
                                 <img src={item.main_image} alt={item.hospital} />

@@ -4,6 +4,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Divider from 'material-ui/Divider'
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
 
 class HospitalDetails extends Component {
 
@@ -19,13 +20,20 @@ class HospitalDetails extends Component {
         if (this.props.detail) {
             hospital_detail = (
                 <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-                    <Paper style={this.props.style} zDepth={1} rounded={false}>
-                        <Divider />           
-                        <span style={styles.desc}>
-                          &nbsp; &nbsp; &nbsp; {this.props.detail.description}
-                        </span>
-                        <Divider />
-                    </Paper>
+                    <Card initiallyExpanded={true}>
+                        <CardHeader
+                            subtitle={this.props.detail.address}
+                            actAsExpander={true}
+                            showExpandableButton={true}
+                            />
+                        <CardText expandable={true} >
+                            <span style={styles.desc}>
+                                &nbsp; &nbsp; &nbsp; {this.props.detail.description}
+                                &nbsp;{'产科综合评分: ' + this.props.detail.rating}
+                            </span>
+
+                        </CardText>
+                    </Card>
                 </MuiThemeProvider>
             )
         }

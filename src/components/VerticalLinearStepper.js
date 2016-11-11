@@ -62,7 +62,7 @@ class VerticalLinearStepper extends React.Component {
     componentWillMount() {
         if (this.props.redirect === false) {
             console.log('redirct to hospital list')
-            this.props.dispatch(push('/'))
+            this.props.dispatch(push('list'))
         }
     }
 
@@ -246,13 +246,13 @@ const mapDispatchToProps = (dispatch) => {
         },
         homeAction: () => {
             dispatch(resetAction())
-            dispatch(push('/'))
+            dispatch(push('list'))
         },
         onBackButtonEvent: (e) => {
             console.log('handling back button press')
             e.preventDefault()
             dispatch(resetAction())
-            dispatch(push('/'))
+            dispatch(push('list'))
         }
     }
 }
