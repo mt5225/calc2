@@ -13,6 +13,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import HospitalList from './components/HospitalList'
 import NotFound from './components/NotFound'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import Landing from './components/Landing'
 
 
 injectTapEventPlugin();
@@ -30,9 +31,9 @@ ReactDOM.render(
   <Provider store={store}>
       <Router history={history}>
         <Route path="/steps" component={App} />
-        <Route path="/" component={HospitalList} />
+        <Route path="/list" component={HospitalList} />
         <Route path="/calc2" component={HospitalList} />
-        <Route path="*" component={NotFound} />
+        <Route path="*" component={Landing} />
       </Router>
   </Provider>,
   document.getElementById('root')
