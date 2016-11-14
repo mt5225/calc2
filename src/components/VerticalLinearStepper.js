@@ -246,13 +246,13 @@ const mapDispatchToProps = (dispatch) => {
         },
         homeAction: () => {
             dispatch(resetAction())
-            dispatch(push('list'))
+            dispatch(push('/calc2/list'))
         },
         onBackButtonEvent: (e) => {
             console.log('handling back button press')
             e.preventDefault()
             dispatch(resetAction())
-            dispatch(push('list'))
+            dispatch(push('/calc2/list'))
         }
     }
 }

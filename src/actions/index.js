@@ -133,7 +133,7 @@ export const setHospitalAction = (payload) => {
 export const hospitalItemSelectedAction = (payload) => {
     return (dispatch, getState) => {
         dispatch(setHospitalAction(payload))
-        dispatch(push('/steps'))
+        dispatch(push('/calc2/steps'))
     }
 }
 

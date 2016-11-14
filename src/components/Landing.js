@@ -22,7 +22,7 @@ class Landing extends Component {
         if (completed > 100) {
             this.setState({ completed: 100 });
             console.log('done, redirect to hospital list')
-            this.props.dispatch(push('list'))
+            this.props.dispatch(push('/calc2/list'))
         } else {
             this.setState({ completed });
             const diff = Math.random() * 10;
@@ -45,7 +45,7 @@ class Landing extends Component {
         return (
             <MuiThemeProvider>
                 <div className='landing'>
-                    <img className='logo ' src='images/logo.png' alt='logo'/>
+                    <img className='logo ' src='/images/logo.png' alt='logo'/>
                     <div style={style.container}>
                         <CircularProgress color='#ffffff' />
                     </div>
