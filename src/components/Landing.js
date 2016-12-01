@@ -45,7 +45,7 @@ class Landing extends Component {
         return (
             <MuiThemeProvider>
                 <div className='landing'>
-                    <img className='logo ' src='/images/logo.png' alt='logo'/>
+                    <img className='logo ' src='https://s3-us-west-1.amazonaws.com/uniroom/hospital/logo.png' alt='logo'/>
                     <div style={style.container}>
                         <CircularProgress color='#ffffff' />
                     </div>
